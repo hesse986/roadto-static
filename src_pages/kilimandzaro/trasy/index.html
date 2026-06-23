@@ -1,0 +1,70 @@
+<div class="map active"><img 
+src="/assets/images/framer/H1uV71HmHwcSbf2lI3IXbTOqzo.png"></div>
+<div class="map"><img 
+src="/assets/images/framer/Tj1bIDbhxHmtpFetxXPtByFRlM.png"></div>
+<div class="map"><img 
+src="/assets/images/framer/jaCVCkNeYXVCnHLKCkL1ggvNo.png"></div>
+<div class="map"><img 
+src="/assets/images/framer/ymoD2RIoGh4EZfvAcPibQDKUU.png"></div>
+<div class="map"><img 
+src="/assets/images/framer/qBLGlEWF4YERkNapDrKid0rRk.png"></div>
+<div class="map"><img 
+src="/assets/images/framer/zRRqdMgdrnY3UXU60b7g1LMgmI.png"></div>
+<div class="map"><img 
+src="/assets/images/framer/UVSTsnVy5MAQlMlGWrw1cZy9OFA.png"></div>
+<div class="map"><img 
+src="/assets/images/framer/we3HbvznYRvwn6ix2pJbzc1ZLA.png"></div><!doctype 
+html> <html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trasy — Kilimandżaro</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#111}
+.menu{position:fixed;top:24px;left:24px;font-size:28px;z-index:10}
+main{padding:80px 6vw}
+h1{text-align:center;font-size:56px;margin:0 0 80px}
+.tabs{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:70px}
+button{border:2px solid #111;border-radius:999px;background:white;padding:18px 34px;font-size:22px;font-weight:700;cursor:pointer}
+button.active{color:#b24a36;border-color:#b24a36}
+.map{display:none;max-width:1100px;margin:0 auto}
+.map.active{display:block}
+.map img{width:100%;height:auto;display:block}
+</style>
+  <link rel="stylesheet" href="/assets/css/roadto-brand.css">
+</head>
+<body>
+<div class="menu">☰</div>
+<main>
+<h1>Trasy</h1>
+
+<div class="tabs">
+<button class="active" onclick="showMap(0)">Machame</button>
+<button onclick="showMap(1)">Marangu</button>
+<button onclick="showMap(2)">Lemosho</button>
+<button onclick="showMap(3)">Rongai</button>
+<button onclick="showMap(4)">Northern Circuit</button>
+<button onclick="showMap(5)">Shira</button>
+<button onclick="showMap(6)">Umbwe</button>
+<button onclick="showMap(7)">Western Breach</button>
+</div>
+
+<div class="map active"><img src="/assets/images/framer/H1uV71HmHwcSbf2lI3IXbTOqzo.png"></div>
+<div class="map"><img src="/assets/images/framer/c7RzqIfKiTD8JtCmeSAxOzKYVE.png"></div>
+<div class="map"><img src="/assets/images/framer/cBhFL6I2YMYV2n0qeTsOWTDZ928.png"></div>
+<div class="map"><img src="/assets/images/framer/M92elt2gK4oIZ38fzUb0BeYIPYU.png"></div>
+<div class="map"><img src="/assets/images/framer/QQlkKuYQUzfgyKIQZEGmEHAXfo.png"></div>
+<div class="map"><img src="/assets/images/framer/Tj1bIDbhxHmtpFetxXPtByFRlM.png"></div>
+<div class="map"><img src="/assets/images/framer/UVSTsnVy5MAQlMlGWrw1cZy9OFA.png"></div>
+<div class="map"><img src="/assets/images/framer/WheE5YexjAfPcem1fbigmBXJiQY.png"></div>
+
+</main>
+
+<script>
+function showMap(index){
+  document.querySelectorAll('.map').forEach((el,i)=>el.classList.toggle('active', i===index));
+  document.querySelectorAll('button').forEach((el,i)=>el.classList.toggle('active', i===index));
+}
+</script>
+</body>
+</html>

@@ -1,70 +1,74 @@
-<div class="map active"><img 
-src="/assets/images/framer/H1uV71HmHwcSbf2lI3IXbTOqzo.png"></div>
-<div class="map"><img 
-src="/assets/images/framer/Tj1bIDbhxHmtpFetxXPtByFRlM.png"></div>
-<div class="map"><img 
-src="/assets/images/framer/jaCVCkNeYXVCnHLKCkL1ggvNo.png"></div>
-<div class="map"><img 
-src="/assets/images/framer/ymoD2RIoGh4EZfvAcPibQDKUU.png"></div>
-<div class="map"><img 
-src="/assets/images/framer/qBLGlEWF4YERkNapDrKid0rRk.png"></div>
-<div class="map"><img 
-src="/assets/images/framer/zRRqdMgdrnY3UXU60b7g1LMgmI.png"></div>
-<div class="map"><img 
-src="/assets/images/framer/UVSTsnVy5MAQlMlGWrw1cZy9OFA.png"></div>
-<div class="map"><img 
-src="/assets/images/framer/we3HbvznYRvwn6ix2pJbzc1ZLA.png"></div><!doctype 
-html> <html lang="pl">
+<!doctype html>
+<html lang="pl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trasy — Kilimandżaro</title>
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#111}
-.menu{position:fixed;top:24px;left:24px;font-size:28px;z-index:10}
-main{padding:80px 6vw}
-h1{text-align:center;font-size:56px;margin:0 0 80px}
-.tabs{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:70px}
-button{border:2px solid #111;border-radius:999px;background:white;padding:18px 34px;font-size:22px;font-weight:700;cursor:pointer}
-button.active{color:#b24a36;border-color:#b24a36}
-.map{display:none;max-width:1100px;margin:0 auto}
-.map.active{display:block}
-.map img{width:100%;height:auto;display:block}
-</style>
-  <link rel="stylesheet" href="/assets/css/roadto-brand.css">
+<title>Trasy — RoadTo Kilimandżaro</title>
+<meta name="description" content="Mapy tras wejściowych na Kilimandżaro: Machame, Marangu, Lemosho, Rongai i inne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body>
-<div class="menu">☰</div>
+<body class="page-trasy">
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="/kilimandzaro/">
+      <img class="brand__mark" src="/assets/images/framer/1QZodsXygocZljYBuQ3tYv94OA.svg" alt="">
+      <span class="brand__name">Road<b>To</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Sekcje Kilimandżaro">
+      <a class="is-current" href="/kilimandzaro/trasy/">Trasy</a><a class="" href="/kilimandzaro/trening/">Trening</a><a class="" href="/kilimandzaro/dieta/">Dieta</a><a class="" href="/kilimandzaro/zdrowie/">Zdrowie</a><a class="" href="/kilimandzaro/oddychanie/">Oddychanie</a><a class="" href="/kilimandzaro/sprzet/">Sprzęt</a><a class="" href="/kilimandzaro/logistyka/">Logistyka</a><a class="" href="/kilimandzaro/safari-atrakcje/">Safari i atrakcje</a>
+    </nav>
+  </div>
+</header>
+<section class="hero ">
+  <div class="hero__media"><img src="/assets/images/framer/N8r3L6juAZsihso94JAF3tsgkuY.jpg" alt=""></div>
+  <div class="hero__inner">
+    <p class="crumbs"><a href="/kilimandzaro/">Kilimandżaro</a></p>
+    <p class="eyebrow">RoadTo · Kilimandżaro</p>
+    <h1>Trasy</h1>
+    <p class="hero__lead">Warianty wejścia na dach Afryki.</p>
+    
+  </div>
+</section>
 <main>
-<h1>Trasy</h1>
-
-<div class="tabs">
-<button class="active" onclick="showMap(0)">Machame</button>
-<button onclick="showMap(1)">Marangu</button>
-<button onclick="showMap(2)">Lemosho</button>
-<button onclick="showMap(3)">Rongai</button>
-<button onclick="showMap(4)">Northern Circuit</button>
-<button onclick="showMap(5)">Shira</button>
-<button onclick="showMap(6)">Umbwe</button>
-<button onclick="showMap(7)">Western Breach</button>
-</div>
-
-<div class="map active"><img src="/assets/images/framer/H1uV71HmHwcSbf2lI3IXbTOqzo.png"></div>
-<div class="map"><img src="/assets/images/framer/c7RzqIfKiTD8JtCmeSAxOzKYVE.png"></div>
-<div class="map"><img src="/assets/images/framer/cBhFL6I2YMYV2n0qeTsOWTDZ928.png"></div>
-<div class="map"><img src="/assets/images/framer/M92elt2gK4oIZ38fzUb0BeYIPYU.png"></div>
-<div class="map"><img src="/assets/images/framer/QQlkKuYQUzfgyKIQZEGmEHAXfo.png"></div>
-<div class="map"><img src="/assets/images/framer/Tj1bIDbhxHmtpFetxXPtByFRlM.png"></div>
-<div class="map"><img src="/assets/images/framer/UVSTsnVy5MAQlMlGWrw1cZy9OFA.png"></div>
-<div class="map"><img src="/assets/images/framer/WheE5YexjAfPcem1fbigmBXJiQY.png"></div>
-
+  <section class="section-intro"><p>Na Kilimandżaro prowadzi kilka tras, które różnią się długością, krajobrazem i tempem aklimatyzacji. Wybierz trasę, by zobaczyć jej przebieg na mapie.</p></section>
+  <div class="routes">
+    <div class="routes__tabs" role="tablist" aria-label="Wybór trasy"><button type="button" class="routes__tab is-active" data-i="0">Machame</button><button type="button" class="routes__tab" data-i="1">Marangu</button><button type="button" class="routes__tab" data-i="2">Lemosho</button><button type="button" class="routes__tab" data-i="3">Rongai</button><button type="button" class="routes__tab" data-i="4">Northern Circuit</button><button type="button" class="routes__tab" data-i="5">Shira</button><button type="button" class="routes__tab" data-i="6">Umbwe</button><button type="button" class="routes__tab" data-i="7">Western Breach</button></div>
+    <figure class="routes__map">
+      <img id="routeMap" src="/assets/images/framer/H1uV71HmHwcSbf2lI3IXbTOqzo.png" alt="Mapa trasy Machame na Kilimandżaro">
+      <figcaption class="routes__cap"><b id="routeName">Machame Route</b><span>Mapa trasy — RoadTo</span></figcaption>
+    </figure>
+  </div>
 </main>
-
 <script>
-function showMap(index){
-  document.querySelectorAll('.map').forEach((el,i)=>el.classList.toggle('active', i===index));
-  document.querySelectorAll('button').forEach((el,i)=>el.classList.toggle('active', i===index));
-}
+  const R=[["Machame","Machame Route","/assets/images/framer/H1uV71HmHwcSbf2lI3IXbTOqzo.png"],["Marangu","Marangu Route","/assets/images/framer/Tj1bIDbhxHmtpFetxXPtByFRlM.png"],["Lemosho","Lemosho Route","/assets/images/framer/jaCVCkNeYXVCnHLKCkL1ggvNo.png"],["Rongai","Rongai Route","/assets/images/framer/ymoD2RIoGh4EZfvAcPibQDKUU.png"],["Northern Circuit","Northern Circuit Route","/assets/images/framer/qBLGlEWF4YERkNapDrKid0rRk.png"],["Shira","Shira Route","/assets/images/framer/zRRqdMgdrnY3UXU60b7g1LMgmI.png"],["Umbwe","Umbwe Route","/assets/images/framer/UVSTsnVy5MAQlMlGWrw1cZy9OFA.png"],["Western Breach","Western Breach Route","/assets/images/framer/we3HbvznYRvwn6ix2pJbzc1ZLA.png"]];
+  const img=document.getElementById('routeMap'),nm=document.getElementById('routeName');
+  document.querySelectorAll('.routes__tab').forEach(b=>b.addEventListener('click',()=>{
+    const r=R[+b.dataset.i];
+    img.src=r[2]; img.alt='Mapa trasy '+r[0]+' na Kilimandżaro'; nm.textContent=r[1];
+    document.querySelectorAll('.routes__tab').forEach(x=>x.classList.remove('is-active'));
+    b.classList.add('is-active');
+  }));
 </script>
+<footer class="footer">
+  <div class="footer__top">
+    <div>
+      <h2>Masz pytania o wyprawę?</h2>
+      <p>Planujesz wejście na Kilimandżaro albo masz pomysł na wspólny projekt? Śmiało napisz do nas.</p>
+      <div class="footer__contacts">
+        <a href="mailto:7c.road@gmail.com">7c.road@gmail.com</a>
+        <a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener">Instagram — @roadto_7c</a>
+      </div>
+      <a class="btn btn--gold" href="mailto:7c.road@gmail.com">Napisz do nas <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="footer__gallery"><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/MBWb0PBM0bBPV0K2zcCZ0Efk.webp" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/ATMgLLEDmsKumMryHPX4Az1uRE.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/3JsqVojLMZvjjHN4RdxnfDyOk.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/wvOkb9IWYynqK8AHtxtJlFG5iE.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/fAOAXfHCeMpDiLn9f2Aqhivwc.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/mQa2fWmZlSW5KGFFrjWH6DwkZr4.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/iAvOqWBB1x9zr56DMQdud18VfI.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/Z1AfcFhS4QQCDkcqjA2Zi6UoBc8.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/JaRO5dK2imchTtLi1gO4U6411o.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/4BF4YITDaUJIgSuGEiqvxx6el4.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/1oH7wrwEGEAMmqAOlgrHIhCgZms.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/ozZMW0JD5KZWeVRSLsmupXzICk.jpg" alt="" loading="lazy"></a></div>
+  </div>
+  <div class="footer__bar">
+    <span>© 2025 RoadTo · Kilimandżaro</span>
+    <nav><a href="/kilimandzaro/trasy/">Trasy</a><a href="/kilimandzaro/trening/">Trening</a><a href="/kilimandzaro/dieta/">Dieta</a><a href="/kilimandzaro/zdrowie/">Zdrowie</a><a href="/kilimandzaro/oddychanie/">Oddychanie</a><a href="/kilimandzaro/sprzet/">Sprzęt</a><a href="/kilimandzaro/logistyka/">Logistyka</a><a href="/kilimandzaro/safari-atrakcje/">Safari i atrakcje</a></nav>
+  </div>
+</footer>
 </body>
 </html>

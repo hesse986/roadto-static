@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kilimandżaro — ROADTO.PL</title>
+  <meta name="description" content="Materiały ROADTO.PL dotyczące przygotowania do Kilimandżaro.">
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --card: #ffffff;
+      --text: #1f1f1f;
+      --muted: #68645c;
+      --border: #ded6c7;
+      --accent: #2f5d50;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 34px 20px 24px;
+      border-bottom: 1px solid var(--border);
+      background: #fffaf0;
+    }
+
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .04em;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(38px, 7vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .lead {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    main {
+      padding: 34px 20px 64px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    a.card {
+      display: block;
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      min-height: 150px;
+      box-shadow: 0 12px 36px rgba(0,0,0,.04);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    a.card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 44px rgba(0,0,0,.07);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 30px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/css/roadto-brand.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">ROADTO.PL</div>
+      <h1>Kilimandżaro</h1>
+      <div class="lead">
+        Materiały przygotowujące do wyjazdu na Kilimandżaro: trasy, sprzęt, dieta,
+        logistyka, zdrowie, oddech, safari oraz trening.
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="grid">
+        <a class="card" href="/kilimandzaro/trasy/">
+          <h2>Trasy</h2>
+          <p>Opisy tras wejściowych, mapy i porównanie wariantów.</p>
+        </a>
+
+        <a class="card" href="/kilimandzaro/sprzet/">
+          <h2>Sprzęt</h2>
+          <p>Sprzęt, pakowanie i przygotowanie ekwipunku.</p>
+        </a>
+
+        <a class="card" href="/kilimandzaro/dieta/">
+          <h2>Dieta</h2>
+          <p>Odżywianie przed wyjazdem i w trakcie trekkingu.</p>
+        </a>
+
+        <a class="card" href="/kilimandzaro/logistyka/">
+          <h2>Logistyka</h2>
+          <p>Organizacja wyjazdu, formalności i praktyczne informacje.</p>
+        </a>
+
+        <a class="card" href="/kilimandzaro/zdrowie/">
+          <h2>Zdrowie</h2>
+          <p>Bezpieczeństwo, wysokość i przygotowanie zdrowotne.</p>
+        </a>
+
+        <a class="card" href="/kilimandzaro/oddychanie/">
+          <h2>Oddychanie</h2>
+          <p>Techniki oddechowe przydatne podczas trekkingu.</p>
+        </a>
+
+        <a class="card" href="/kilimandzaro/safari-atrakcje/">
+          <h2>Safari i atrakcje</h2>
+          <p>Dodatkowe atrakcje po trekkingu i wokół wyjazdu.</p>
+        </a>
+
+        <a class="card" href="/kilimandzaro/trening/">
+          <h2>Trening</h2>
+          <p>Przygotowanie wydolnościowe, siłowe i regeneracja.</p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      ROADTO.PL — Kilimandżaro
+    </div>
+  </footer>
+</body>
+</html>

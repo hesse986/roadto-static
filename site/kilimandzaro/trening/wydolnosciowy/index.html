@@ -1,241 +1,68 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trening wydolnościowy — ROADTO Kilimandżaro</title>
-  <meta name="description" content="Trening wydolnościowy przed wejściem na Kilimandżaro.">
-  <style>
-    :root {
-      --bg: #f5f1e8;
-      --card: #ffffff;
-      --text: #1f1f1f;
-      --muted: #68645c;
-      --border: #ded6c7;
-      --accent: #2f5d50;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    header {
-      padding: 28px 20px 18px;
-      border-bottom: 1px solid var(--border);
-      background: #fffaf0;
-    }
-
-    .wrap {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: .04em;
-      margin-bottom: 18px;
-    }
-
-    nav {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 7px 12px;
-      background: white;
-      font-size: 14px;
-    }
-
-    main {
-      padding: 34px 20px 60px;
-    }
-
-    article {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.04);
-    }
-
-    .breadcrumb {
-      margin-bottom: 20px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .breadcrumb a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(34px, 6vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-    }
-
-    .lead {
-      color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      margin-top: 34px;
-      margin-bottom: 10px;
-      font-size: 26px;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-
-    p {
-      margin: 0 0 16px;
-      font-size: 17px;
-    }
-
-    .section-nav {
-      margin-top: 34px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-nav h2 {
-      margin-top: 0;
-      font-size: 22px;
-    }
-
-    footer {
-      padding: 30px 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 640px) {
-      article {
-        padding: 22px;
-        border-radius: 18px;
-      }
-
-      nav a {
-        font-size: 13px;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="/assets/css/roadto-brand.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trening wydolnościowy — RoadTo Kilimandżaro</title>
+<meta name="description" content="Góry wymagają wytrzymałości. Kilka dni marszu po kilka godzin dziennie, zmieniające się wysokości i coraz rzadsze powietrze sprawiają, że serce i płuca pra">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="brand">ROADTO.PL</div>
-      <nav aria-label="Główna nawigacja">
-        <a href="/kilimandzaro/trasy/">Trasy</a>
-<a href="/kilimandzaro/dieta/">Dieta</a>
-<a href="/kilimandzaro/logistyka/">Logistyka</a>
-<a href="/kilimandzaro/zdrowie/">Zdrowie</a>
-<a href="/kilimandzaro/oddychanie/">Oddychanie</a>
-<a href="/kilimandzaro/safari-atrakcje/">Safari i atrakcje</a>
-<a href="/kilimandzaro/trening/">Trening</a>
-      </nav>
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="/kilimandzaro/">
+      <img class="brand__mark" src="/assets/images/framer/1QZodsXygocZljYBuQ3tYv94OA.svg" alt="">
+      <span class="brand__name">Road<b>To</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Sekcje Kilimandżaro">
+      <a class="" href="/kilimandzaro/trasy/">Trasy</a><a class="is-current" href="/kilimandzaro/trening/">Trening</a><a class="" href="/kilimandzaro/dieta/">Dieta</a><a class="" href="/kilimandzaro/zdrowie/">Zdrowie</a><a class="" href="/kilimandzaro/oddychanie/">Oddychanie</a><a class="" href="/kilimandzaro/sprzet/">Sprzęt</a><a class="" href="/kilimandzaro/logistyka/">Logistyka</a><a class="" href="/kilimandzaro/safari-atrakcje/">Safari i atrakcje</a>
+    </nav>
+  </div>
+</header>
+<section class="hero ">
+  <div class="hero__media"><img src="/assets/images/framer/WZ6tlnrd8xNMH2I5zl26dv1xRg.jpg" alt=""></div>
+  <div class="hero__inner">
+    <p class="crumbs"><a href="/kilimandzaro/">Kilimandżaro</a> / <a href="/kilimandzaro/trening/">Trening</a></p>
+    <p class="eyebrow">RoadTo · Kilimandżaro</p>
+    <h1>Trening wydolnościowy</h1>
+    
+    
+  </div>
+</section>
+<main class="wrap"><section class="section-intro"><p>Góry wymagają wytrzymałości. Kilka dni marszu po kilka godzin dziennie, zmieniające się wysokości i coraz rzadsze powietrze sprawiają, że serce i płuca pracują na pełnych obrotach. Dlatego tak ważne jest, aby w przygotowaniach do wyprawy położyć duży nacisk na trening wydolnościowy. To on pozwala budować „bazę tlenową”, dzięki której możesz iść spokojnym tempem przez wiele godzin bez zadyszki i nadmiernego zmęczenia. Regularne bieganie, jazda na rowerze, szybkie marsze czy pływanie – wszystkie te formy ruchu pomagają stopniowo zwiększać pojemność tlenową organizmu.</p><p>W treningu wydolnościowym kluczowe znaczenie mają strefy tętna, które pokazują, z jaką intensywnością pracuje Twój organizm. Trening w niskich i umiarkowanych strefach wzmacnia serce, poprawia gospodarkę tlenową i uczy ciało oszczędnego gospodarowania energią – co w górach jest bezcenne. Wyższe strefy przydają się do budowania siły biegowej i odporności na intensywniejszy wysiłek, np. podczas stromych podejść.</p></section><div class="cards"><a class="card-link" href="/kilimandzaro/trening/wydolnosciowy/strefy-tetna/">
+      <div class="card-link__media"><img src="/assets/images/framer/ptt1MbUgNPHImTFg0hHE1hSa1eA.jpg" alt="" loading="lazy"></div>
+      <div class="card-link__body">
+        <h3>Strefy tętna</h3>
+        <p>Jak czytać i trenować w strefach.</p>
+        <span class="card-link__more">Zobacz <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a><a class="card-link" href="/kilimandzaro/trening/wydolnosciowy/czynniki-wplywajace/">
+      <div class="card-link__media"><img src="/assets/images/framer/WZ6tlnrd8xNMH2I5zl26dv1xRg.jpg" alt="" loading="lazy"></div>
+      <div class="card-link__body">
+        <h3>Czynniki wpływające</h3>
+        <p>Co realnie podnosi wydolność.</p>
+        <span class="card-link__more">Zobacz <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a></div></main><footer class="footer">
+  <div class="footer__top">
+    <div>
+      <h2>Masz pytania o wyprawę?</h2>
+      <p>Planujesz wejście na Kilimandżaro albo masz pomysł na wspólny projekt? Śmiało napisz do nas.</p>
+      <div class="footer__contacts">
+        <a href="mailto:7c.road@gmail.com">7c.road@gmail.com</a>
+        <a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener">Instagram — @roadto_7c</a>
+      </div>
+      <a class="btn btn--gold" href="mailto:7c.road@gmail.com">Napisz do nas <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-  </header>
-
-  <main>
-    <div class="wrap">
-      <article>
-        <div class="breadcrumb">
-          <a href="/kilimandzaro/trening/">Trening</a> / Trening wydolnościowy
-        </div>
-
-        <h1>Trening wydolnościowy</h1>
-        <div class="lead">Trening wydolnościowy przed wejściem na Kilimandżaro.</div>
-
-        <p>Wydolność pod Kilimandżaro: cardio, marsze i tempo „pole pole” | RoadTo</p>
-<h2>Trening wydolnościowy</h2>
-<p>Góry wymagają wytrzymałości. Kilka dni marszu po kilka godzin dziennie, zmieniające się wysokości i coraz rzadsze powietrze sprawiają, że serce i płuca pracują na pełnych obrotach. Dlatego tak ważne jest, aby w przygotowaniach do wyprawy położyć duży nacisk na trening wydolnościowy. To on pozwala budować „bazę tlenową”, dzięki której możesz iść spokojnym tempem przez wiele godzin bez zadyszki i nadmiernego zmęczenia. Regularne bieganie, jazda na rowerze, szybkie marsze czy pływanie – wszystkie te formy ruchu pomagają stopniowo zwiększać pojemność tlenową organizmu.</p>
-<p>W treningu wydolnościowym kluczowe znaczenie mają strefy tętna, które pokazują, z jaką intensywnością pracuje Twój organizm. Trening w niskich i umiarkowanych strefach wzmacnia serce, poprawia gospodarkę tlenową i uczy ciało oszczędnego gospodarowania energią – co w górach jest bezcenne. Wyższe strefy przydają się do budowania siły biegowej i odporności na intensywniejszy wysiłek, np. podczas stromych podejść.</p>
-<h2>STREFY TĘTNA</h2>
-<h2>Strefy tętna</h2>
-<p>Poznaj strefy tętna i sprawdź, jak wykorzystać je w treningu, by jeszcze lepiej przygotować się do wyprawy.</p>
-<p>Warto pamiętać, że tętno nie zawsze zależy tylko od wysiłku. Wpływają na nie również czynniki naturalne, takie jak wysokość nad poziomem morza, temperatura otoczenia czy zmęczenie organizmu. Istnieją też elementy, na które mamy realny wpływ – np. poziom nawodnienia, jakość snu, dieta czy regularność treningów. Świadomość tych czynników pozwala lepiej rozumieć własne ciało i dopasować intensywność wysiłku do aktualnych możliwości.</p>
-<h2>Czynniki wpływające</h2>
-<h2>na tętno</h2>
-<p>Poznaj czynniki kształtujące tętno, aby lepiej rozumieć reakcje swojego organizmu.</p>
-<h2>CZYNNIKI WPŁYWAJĄCE</h2>
-<h2>NA TĘTNO</h2>
-<h2>CZYNNIKI WPŁYWAJĄCE</h2>
-<h2>NA TĘTNO</h2>
-<p>W kolejnej części znajdziesz przykłady ćwiczeń oraz wskazówki, jak korzystać ze stref tętna w praktyce, by przygotować się do górskiej przygody w sposób mądry i bezpieczny.</p>
-<p>Masz pytania dotyczące naszych podróży, pomysł lub projekt, który chciałbyś/chciałabyś z nami rozpocząć?</p>
-<h2>Śmiało napisz do nas!</h2>
-<h2>WYŚLIJ</h2>
-<h2>instagram</h2>
-<h2>facebook</h2>
-<h2>7c.road@gmail.com</h2>
-<h2>road_to</h2>
-<h2>copyright</h2>
-<h2>|</h2>
-<h2>2025</h2>
-<p>Masz pytania dotyczące naszych podróży, pomysł lub projekt, który chciałbyś/chciałabyś z nami rozpocząć?</p>
-<h2>Śmiało napisz do nas!</h2>
-<h2>WYŚLIJ</h2>
-<h2>instagram</h2>
-<h2>facebook</h2>
-<h2>7c.road@gmail.com</h2>
-<h2>road_to</h2>
-<h2>copyright</h2>
-<h2>|</h2>
-<h2>2025</h2>
-<p>Masz pytania dotyczące naszych podróży, pomysł lub projekt, który chciałbyś/chciałabyś z nami rozpocząć?</p>
-<h2>Śmiało napisz do nas!</h2>
-<h2>WYŚLIJ</h2>
-<h2>instagram</h2>
-<h2>facebook</h2>
-<h2>7c.road@gmail.com</h2>
-<h2>road_to</h2>
-<h2>copyright</h2>
-<h2>|</h2>
-<h2>2025</h2>
-
-        <div class="section-nav">
-          <h2>Podstrony treningowe</h2>
-          <nav aria-label="Podstrony treningowe">
-            <a href="/kilimandzaro/trening/">Trening</a>
-<a href="/kilimandzaro/trening/regeneracja/">Regeneracja</a>
-<a href="/kilimandzaro/trening/wydolnosciowy/">Trening wydolnościowy</a>
-<a href="/kilimandzaro/trening/wydolnosciowy/strefy-tetna/">Strefy tętna</a>
-<a href="/kilimandzaro/trening/wydolnosciowy/czynniki-wplywajace/">Czynniki wpływające</a>
-<a href="/kilimandzaro/trening/oporowy/">Trening oporowy</a>
-<a href="/kilimandzaro/trening/oporowy/core/">Core</a>
-<a href="/kilimandzaro/trening/oporowy/nogi-posladki/">Nogi i pośladki</a>
-<a href="/kilimandzaro/trening/oporowy/plecy-barki/">Plecy i barki</a>
-<a href="/kilimandzaro/trening/oporowy/stabilizacja/">Stabilizacja</a>
-          </nav>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      ROADTO.PL — Kilimandżaro
-    </div>
-  </footer>
+    <div class="footer__gallery"><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/MBWb0PBM0bBPV0K2zcCZ0Efk.webp" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/ATMgLLEDmsKumMryHPX4Az1uRE.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/3JsqVojLMZvjjHN4RdxnfDyOk.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/wvOkb9IWYynqK8AHtxtJlFG5iE.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/fAOAXfHCeMpDiLn9f2Aqhivwc.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/mQa2fWmZlSW5KGFFrjWH6DwkZr4.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/iAvOqWBB1x9zr56DMQdud18VfI.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/Z1AfcFhS4QQCDkcqjA2Zi6UoBc8.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/JaRO5dK2imchTtLi1gO4U6411o.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/4BF4YITDaUJIgSuGEiqvxx6el4.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/1oH7wrwEGEAMmqAOlgrHIhCgZms.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/ozZMW0JD5KZWeVRSLsmupXzICk.jpg" alt="" loading="lazy"></a></div>
+  </div>
+  <div class="footer__bar">
+    <span>© 2025 RoadTo · Kilimandżaro</span>
+    <nav><a href="/kilimandzaro/trasy/">Trasy</a><a href="/kilimandzaro/trening/">Trening</a><a href="/kilimandzaro/dieta/">Dieta</a><a href="/kilimandzaro/zdrowie/">Zdrowie</a><a href="/kilimandzaro/oddychanie/">Oddychanie</a><a href="/kilimandzaro/sprzet/">Sprzęt</a><a href="/kilimandzaro/logistyka/">Logistyka</a><a href="/kilimandzaro/safari-atrakcje/">Safari i atrakcje</a></nav>
+  </div>
+</footer>
 </body>
 </html>

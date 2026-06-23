@@ -1,268 +1,76 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Czynniki wpływające na wydolność — ROADTO Kilimandżaro</title>
-  <meta name="description" content="Czynniki wpływające na wydolność w przygotowaniach.">
-  <style>
-    :root {
-      --bg: #f5f1e8;
-      --card: #ffffff;
-      --text: #1f1f1f;
-      --muted: #68645c;
-      --border: #ded6c7;
-      --accent: #2f5d50;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    header {
-      padding: 28px 20px 18px;
-      border-bottom: 1px solid var(--border);
-      background: #fffaf0;
-    }
-
-    .wrap {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: .04em;
-      margin-bottom: 18px;
-    }
-
-    nav {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 7px 12px;
-      background: white;
-      font-size: 14px;
-    }
-
-    main {
-      padding: 34px 20px 60px;
-    }
-
-    article {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.04);
-    }
-
-    .breadcrumb {
-      margin-bottom: 20px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .breadcrumb a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(34px, 6vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-    }
-
-    .lead {
-      color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      margin-top: 34px;
-      margin-bottom: 10px;
-      font-size: 26px;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-
-    p {
-      margin: 0 0 16px;
-      font-size: 17px;
-    }
-
-    .section-nav {
-      margin-top: 34px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-nav h2 {
-      margin-top: 0;
-      font-size: 22px;
-    }
-
-    footer {
-      padding: 30px 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 640px) {
-      article {
-        padding: 22px;
-        border-radius: 18px;
-      }
-
-      nav a {
-        font-size: 13px;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="/assets/css/roadto-brand.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Czynniki wpływające na wydolność — RoadTo Kilimandżaro</title>
+<meta name="description" content="Czynniki wpływające na wydolność — RoadTo Kilimandżaro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="brand">ROADTO.PL</div>
-      <nav aria-label="Główna nawigacja">
-        <a href="/kilimandzaro/trasy/">Trasy</a>
-<a href="/kilimandzaro/dieta/">Dieta</a>
-<a href="/kilimandzaro/logistyka/">Logistyka</a>
-<a href="/kilimandzaro/zdrowie/">Zdrowie</a>
-<a href="/kilimandzaro/oddychanie/">Oddychanie</a>
-<a href="/kilimandzaro/safari-atrakcje/">Safari i atrakcje</a>
-<a href="/kilimandzaro/trening/">Trening</a>
-      </nav>
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="/kilimandzaro/">
+      <img class="brand__mark" src="/assets/images/framer/1QZodsXygocZljYBuQ3tYv94OA.svg" alt="">
+      <span class="brand__name">Road<b>To</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Sekcje Kilimandżaro">
+      <a class="" href="/kilimandzaro/trasy/">Trasy</a><a class="is-current" href="/kilimandzaro/trening/">Trening</a><a class="" href="/kilimandzaro/dieta/">Dieta</a><a class="" href="/kilimandzaro/zdrowie/">Zdrowie</a><a class="" href="/kilimandzaro/oddychanie/">Oddychanie</a><a class="" href="/kilimandzaro/sprzet/">Sprzęt</a><a class="" href="/kilimandzaro/logistyka/">Logistyka</a><a class="" href="/kilimandzaro/safari-atrakcje/">Safari i atrakcje</a>
+    </nav>
+  </div>
+</header>
+<section class="hero ">
+  <div class="hero__media"><img src="/assets/images/framer/WZ6tlnrd8xNMH2I5zl26dv1xRg.jpg" alt=""></div>
+  <div class="hero__inner">
+    <p class="crumbs"><a href="/kilimandzaro/">Kilimandżaro</a> / <a href="/kilimandzaro/trening/wydolnosciowy/">Trening wydolnościowy</a></p>
+    <p class="eyebrow">RoadTo · Kilimandżaro</p>
+    <h1>Czynniki wpływające na wydolność</h1>
+    
+    
+  </div>
+</section>
+<main class="content"><div class="content__col"><details class="chapter" open><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Czynniki wpływające na tętno</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>Podczas treningu wydolnościowego szybko zauważysz, że tętno nie zawsze odzwierciedla jedynie intensywność wysiłku. Zdarza się, że tego samego dnia, przy takim samym tempie, serce raz bije szybciej, a innym razem wolniej. To naturalne – na jego pracę wpływa wiele czynników: wiek, płeć, ogólna kondycja, ale też stres, emocje, jakość snu, dieta, poziom nawodnienia czy aktualny stan zdrowia. Warto o tym pamiętać, by lepiej rozumieć reakcje swojego organizmu i nie złościć się, gdy zegarek pokazuje wyższe wartości niż zwykle. Świadomość tych elementów pozwala trenować mądrzej, dopasowując wysiłek do aktualnych możliwości i podchodząc do przygotowań w sposób elastyczny oraz bezpieczny.</p>
+<p class="list-label">Fizjologiczne czynniki:</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Wiek</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– dzieci mają wyższe tętno niż dorośli, a u osób starszych może się ono nieco obniżać. Z wiekiem serce pracuje wolniej, a zakres tętna maksymalnego stopniowo maleje.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Płeć</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– kobiety zazwyczaj mają nieco wyższe tętno spoczynkowe niż mężczyźni. Wynika to m.in. z różnic w wielkości serca i objętości krwi.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Kondycja fizyczna</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– osoby aktywne fizycznie mają zwykle niższe tętno spoczynkowe dzięki bardziej wydolnemu sercu. To efekt regularnych treningów, które wzmacniają mięsień sercowy i poprawiają krążenie.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Pozycja ciała</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– tętno może wzrosnąć po nagłej zmianie pozycji z leżącej na stojącą. To naturalna reakcja układu krążenia, który musi szybko dostarczyć krew do mózgu.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Temperatura ciała i otoczenia</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– wysoka temperatura lub gorączka zwiększają tętno. Serce pracuje szybciej, aby schłodzić organizm i utrzymać prawidłową temperaturę.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Pora dnia</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– tętno jest najniższe rano, a wzrasta w ciągu dnia. Rytm dobowy, hormony i poziom aktywności mają tu kluczowe znaczenie.</p>
+<p class="list-label">Emocjonalne i psychiczne czynniki:</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Stres i lęk</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– aktywują układ współczulny („walcz lub uciekaj”), przyspieszając tętno. Dlatego nawet bez wysiłku fizycznego serce może bić szybciej.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Ekscytacja, strach, złość</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– również podnoszą tętno przez wyrzut adrenaliny. To naturalna reakcja organizmu przygotowująca do działania.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Relaks i medytacja</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– mogą obniżać tętno, aktywując układ przywspółczulny. Ćwiczenia oddechowe i techniki relaksacyjne pomagają je ustabilizować.</p>
+<p class="list-label">Czynniki związane ze stylem życia:</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Aktywność fizyczna</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– podczas wysiłku tętno rośnie, a po treningu powoli wraca do normy. Im lepsza kondycja, tym szybciej serce odzyskuje spokój.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Sen</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– w czasie snu tętno spada, a organizm regeneruje się i odpoczywa. Brak snu może powodować jego podwyższenie w ciągu dnia.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Dieta i nawadnianie</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– kofeina i alkohol mogą podnosić tętno, a odwodnienie dodatkowo je zwiększa. Regularne picie wody i zbilansowana dieta pomagają je ustabilizować.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Palenie tytoniu</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– zwiększa tętno przez pobudzenie układu nerwowego i obkurczanie naczyń krwionośnych.</p>
+<p class="list-label">Choroby i leki:</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Infekcje, gorączka</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– serce bije szybciej, by wspomóc organizm w walce z chorobą i rozprowadzić ciepło.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Anemia</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– przy niedoborze tlenu we krwi serce przyspiesza, aby zrekompensować jego brak.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Nadczynność tarczycy</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– podnosi tętno, ponieważ hormony tarczycy przyspieszają metabolizm.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Niektóre leki</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>– np. beta-blokery obniżają tętno spoczynkowe, a adrenalina, kofeina czy środki pobudzające mogą je gwałtownie zwiększać.</p></div></details>
+<details class="chapter"><summary><span class="chapter__num chapter__num--glyph">▲</span><span class="chapter__title">Wskazówka</span><svg class="chapter__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="chapter__body"><p>Słuchaj swojego serca, ale zawsze patrz na szerszy obraz – trening, regeneracja i codzienność idą w parze.</p></div></details></div></main><footer class="footer">
+  <div class="footer__top">
+    <div>
+      <h2>Masz pytania o wyprawę?</h2>
+      <p>Planujesz wejście na Kilimandżaro albo masz pomysł na wspólny projekt? Śmiało napisz do nas.</p>
+      <div class="footer__contacts">
+        <a href="mailto:7c.road@gmail.com">7c.road@gmail.com</a>
+        <a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener">Instagram — @roadto_7c</a>
+      </div>
+      <a class="btn btn--gold" href="mailto:7c.road@gmail.com">Napisz do nas <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-  </header>
-
-  <main>
-    <div class="wrap">
-      <article>
-        <div class="breadcrumb">
-          <a href="/kilimandzaro/trening/">Trening</a> / Czynniki wpływające na wydolność
-        </div>
-
-        <h1>Czynniki wpływające na wydolność</h1>
-        <div class="lead">Czynniki wpływające na wydolność w przygotowaniach.</div>
-
-        <p>Czynniki wpływające na wydolność przed Kilimandżaro: sen, stres, waga | RoadTo</p>
-<h2>Czynniki wpływające na tętno</h2>
-<p>Podczas treningu wydolnościowego szybko zauważysz, że tętno nie zawsze odzwierciedla jedynie intensywność wysiłku. Zdarza się, że tego samego dnia, przy takim samym tempie, serce raz bije szybciej, a innym razem wolniej. To naturalne – na jego pracę wpływa wiele czynników: wiek, płeć, ogólna kondycja, ale też stres, emocje, jakość snu, dieta, poziom nawodnienia czy aktualny stan zdrowia. Warto o tym pamiętać, by lepiej rozumieć reakcje swojego organizmu i nie złościć się, gdy zegarek pokazuje wyższe wartości niż zwykle. Świadomość tych elementów pozwala trenować mądrzej, dopasowując wysiłek do aktualnych możliwości i podchodząc do przygotowań w sposób elastyczny oraz bezpieczny.</p>
-<p>Fizjologiczne czynniki:</p>
-<h2>Wiek</h2>
-<p>– dzieci mają wyższe tętno niż dorośli, a u osób starszych może się ono nieco obniżać. Z wiekiem serce pracuje wolniej, a zakres tętna maksymalnego stopniowo maleje.</p>
-<h2>Płeć</h2>
-<p>– kobiety zazwyczaj mają nieco wyższe tętno spoczynkowe niż mężczyźni. Wynika to m.in. z różnic w wielkości serca i objętości krwi.</p>
-<h2>Kondycja fizyczna</h2>
-<p>– osoby aktywne fizycznie mają zwykle niższe tętno spoczynkowe dzięki bardziej wydolnemu sercu. To efekt regularnych treningów, które wzmacniają mięsień sercowy i poprawiają krążenie.</p>
-<h2>Pozycja ciała</h2>
-<p>– tętno może wzrosnąć po nagłej zmianie pozycji z leżącej na stojącą. To naturalna reakcja układu krążenia, który musi szybko dostarczyć krew do mózgu.</p>
-<h2>Temperatura ciała i otoczenia</h2>
-<p>– wysoka temperatura lub gorączka zwiększają tętno. Serce pracuje szybciej, aby schłodzić organizm i utrzymać prawidłową temperaturę.</p>
-<h2>Pora dnia</h2>
-<p>– tętno jest najniższe rano, a wzrasta w ciągu dnia. Rytm dobowy, hormony i poziom aktywności mają tu kluczowe znaczenie.</p>
-<p>Emocjonalne i psychiczne czynniki:</p>
-<h2>Stres i lęk</h2>
-<p>– aktywują układ współczulny („walcz lub uciekaj”), przyspieszając tętno. Dlatego nawet bez wysiłku fizycznego serce może bić szybciej.</p>
-<h2>Ekscytacja, strach, złość</h2>
-<p>– również podnoszą tętno przez wyrzut adrenaliny. To naturalna reakcja organizmu przygotowująca do działania.</p>
-<h2>Relaks i medytacja</h2>
-<p>– mogą obniżać tętno, aktywując układ przywspółczulny. Ćwiczenia oddechowe i techniki relaksacyjne pomagają je ustabilizować.</p>
-<p>Czynniki związane ze stylem życia:</p>
-<h2>Aktywność fizyczna</h2>
-<p>– podczas wysiłku tętno rośnie, a po treningu powoli wraca do normy. Im lepsza kondycja, tym szybciej serce odzyskuje spokój.</p>
-<h2>Sen</h2>
-<p>– w czasie snu tętno spada, a organizm regeneruje się i odpoczywa. Brak snu może powodować jego podwyższenie w ciągu dnia.</p>
-<h2>Dieta i nawadnianie</h2>
-<p>– kofeina i alkohol mogą podnosić tętno, a odwodnienie dodatkowo je zwiększa. Regularne picie wody i zbilansowana dieta pomagają je ustabilizować.</p>
-<h2>Palenie tytoniu</h2>
-<p>– zwiększa tętno przez pobudzenie układu nerwowego i obkurczanie naczyń krwionośnych.</p>
-<p>Choroby i leki:</p>
-<h2>Infekcje, gorączka</h2>
-<p>– serce bije szybciej, by wspomóc organizm w walce z chorobą i rozprowadzić ciepło.</p>
-<h2>Anemia</h2>
-<p>– przy niedoborze tlenu we krwi serce przyspiesza, aby zrekompensować jego brak.</p>
-<h2>Nadczynność tarczycy</h2>
-<p>– podnosi tętno, ponieważ hormony tarczycy przyspieszają metabolizm.</p>
-<h2>Niektóre leki</h2>
-<p>– np. beta-blokery obniżają tętno spoczynkowe, a adrenalina, kofeina czy środki pobudzające mogą je gwałtownie zwiększać.</p>
-<h2>Wskazówka</h2>
-<p>Słuchaj swojego serca, ale zawsze patrz na szerszy obraz – trening, regeneracja i codzienność idą w parze.</p>
-<p>Masz pytania dotyczące naszych podróży, pomysł lub projekt, który chciałbyś/chciałabyś z nami rozpocząć?</p>
-<h2>Śmiało napisz do nas!</h2>
-<h2>WYŚLIJ</h2>
-<h2>instagram</h2>
-<h2>facebook</h2>
-<h2>7c.road@gmail.com</h2>
-<h2>road_to</h2>
-<h2>copyright</h2>
-<h2>|</h2>
-<h2>2025</h2>
-<p>Masz pytania dotyczące naszych podróży, pomysł lub projekt, który chciałbyś/chciałabyś z nami rozpocząć?</p>
-<h2>Śmiało napisz do nas!</h2>
-<h2>WYŚLIJ</h2>
-<h2>instagram</h2>
-<h2>facebook</h2>
-<h2>7c.road@gmail.com</h2>
-<h2>road_to</h2>
-<h2>copyright</h2>
-<h2>|</h2>
-<h2>2025</h2>
-<p>Masz pytania dotyczące naszych podróży, pomysł lub projekt, który chciałbyś/chciałabyś z nami rozpocząć?</p>
-<h2>Śmiało napisz do nas!</h2>
-<h2>WYŚLIJ</h2>
-<h2>instagram</h2>
-<h2>facebook</h2>
-<h2>7c.road@gmail.com</h2>
-<h2>road_to</h2>
-<h2>copyright</h2>
-<h2>|</h2>
-<h2>2025</h2>
-
-        <div class="section-nav">
-          <h2>Podstrony treningowe</h2>
-          <nav aria-label="Podstrony treningowe">
-            <a href="/kilimandzaro/trening/">Trening</a>
-<a href="/kilimandzaro/trening/regeneracja/">Regeneracja</a>
-<a href="/kilimandzaro/trening/wydolnosciowy/">Trening wydolnościowy</a>
-<a href="/kilimandzaro/trening/wydolnosciowy/strefy-tetna/">Strefy tętna</a>
-<a href="/kilimandzaro/trening/wydolnosciowy/czynniki-wplywajace/">Czynniki wpływające</a>
-<a href="/kilimandzaro/trening/oporowy/">Trening oporowy</a>
-<a href="/kilimandzaro/trening/oporowy/core/">Core</a>
-<a href="/kilimandzaro/trening/oporowy/nogi-posladki/">Nogi i pośladki</a>
-<a href="/kilimandzaro/trening/oporowy/plecy-barki/">Plecy i barki</a>
-<a href="/kilimandzaro/trening/oporowy/stabilizacja/">Stabilizacja</a>
-          </nav>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      ROADTO.PL — Kilimandżaro
-    </div>
-  </footer>
+    <div class="footer__gallery"><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/MBWb0PBM0bBPV0K2zcCZ0Efk.webp" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/ATMgLLEDmsKumMryHPX4Az1uRE.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/3JsqVojLMZvjjHN4RdxnfDyOk.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/wvOkb9IWYynqK8AHtxtJlFG5iE.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/fAOAXfHCeMpDiLn9f2Aqhivwc.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/mQa2fWmZlSW5KGFFrjWH6DwkZr4.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/iAvOqWBB1x9zr56DMQdud18VfI.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/Z1AfcFhS4QQCDkcqjA2Zi6UoBc8.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/JaRO5dK2imchTtLi1gO4U6411o.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/4BF4YITDaUJIgSuGEiqvxx6el4.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/1oH7wrwEGEAMmqAOlgrHIhCgZms.jpg" alt="" loading="lazy"></a><a href="https://www.instagram.com/roadto_7c/" target="_blank" rel="noopener"><img src="/assets/images/framer/ozZMW0JD5KZWeVRSLsmupXzICk.jpg" alt="" loading="lazy"></a></div>
+  </div>
+  <div class="footer__bar">
+    <span>© 2025 RoadTo · Kilimandżaro</span>
+    <nav><a href="/kilimandzaro/trasy/">Trasy</a><a href="/kilimandzaro/trening/">Trening</a><a href="/kilimandzaro/dieta/">Dieta</a><a href="/kilimandzaro/zdrowie/">Zdrowie</a><a href="/kilimandzaro/oddychanie/">Oddychanie</a><a href="/kilimandzaro/sprzet/">Sprzęt</a><a href="/kilimandzaro/logistyka/">Logistyka</a><a href="/kilimandzaro/safari-atrakcje/">Safari i atrakcje</a></nav>
+  </div>
+</footer>
 </body>
 </html>

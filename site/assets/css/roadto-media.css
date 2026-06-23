@@ -1,0 +1,155 @@
+/* ROADTO media layer: logo, hero images and selected content photos */
+
+.brand {
+  min-height: 44px;
+  font-size: 0 !important;
+  letter-spacing: 0 !important;
+}
+
+.brand::before {
+  content: "" !important;
+  width: 164px !important;
+  height: 44px !important;
+  border-radius: 0 !important;
+  background: url("/assets/images/brand/logo-roadto.svg") left center / contain no-repeat !important;
+  box-shadow: none !important;
+  display: inline-block !important;
+}
+
+body.page-home .page {
+  background:
+    linear-gradient(90deg, rgba(16, 42, 36, 0.88), rgba(16, 42, 36, 0.46)),
+    url("/assets/images/brand/hero-home.jpg") center / cover;
+}
+
+body.page-home .hero {
+  background:
+    linear-gradient(135deg, rgba(16, 42, 36, 0.92), rgba(36, 76, 66, 0.82)) !important;
+  color: white !important;
+  border-color: rgba(255,255,255,.18) !important;
+}
+
+body.page-home .hero h1,
+body.page-home .hero p {
+  color: white !important;
+}
+
+body.page-home .hero p {
+  color: rgba(255,255,255,.82) !important;
+}
+
+body.page-home .brand {
+  margin-bottom: 28px;
+}
+
+body.page-kilimandzaro header {
+  background:
+    linear-gradient(90deg, rgba(16, 42, 36, 0.94), rgba(16, 42, 36, 0.40)),
+    url("/assets/images/brand/hero-kilimandzaro.jpg") center / cover !important;
+}
+
+body.page-trasy header {
+  background:
+    linear-gradient(90deg, rgba(16, 42, 36, 0.94), rgba(16, 42, 36, 0.42)),
+    url("/assets/images/brand/hero-trasy.jpg") center / cover !important;
+}
+
+body.page-trening header,
+body.page-training-subpage header {
+  background:
+    linear-gradient(90deg, rgba(16, 42, 36, 0.94), rgba(16, 42, 36, 0.42)),
+    url("/assets/images/brand/hero-trening.jpg") center / cover !important;
+}
+
+body.page-safari header {
+  background:
+    linear-gradient(90deg, rgba(16, 42, 36, 0.94), rgba(16, 42, 36, 0.42)),
+    url("/assets/images/brand/hero-safari.jpg") center / cover !important;
+}
+
+body.page-sprzet header,
+body.page-dieta header,
+body.page-logistyka header,
+body.page-zdrowie header,
+body.page-oddychanie header {
+  background:
+    linear-gradient(90deg, rgba(16, 42, 36, 0.94), rgba(16, 42, 36, 0.42)),
+    url("/assets/images/brand/hero-kilimandzaro.jpg") center / cover !important;
+}
+
+.roadto-hero-photo {
+  margin: 28px 0 34px;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(24, 55, 47, 0.14);
+  box-shadow: 0 18px 48px rgba(24, 55, 47, 0.13);
+  background: #102a24;
+}
+
+.roadto-hero-photo img {
+  display: block;
+  width: 100%;
+  height: clamp(260px, 42vw, 470px);
+  object-fit: cover;
+}
+
+.roadto-hero-photo figcaption {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: rgba(255,255,255,.76);
+  background: #102a24;
+}
+
+body.page-kilimandzaro .grid {
+  margin-top: 10px;
+}
+
+body.page-kilimandzaro .grid a.card {
+  min-height: 170px;
+}
+
+@media (max-width: 640px) {
+  .brand::before {
+    width: 138px !important;
+    height: 38px !important;
+  }
+
+  .roadto-hero-photo {
+    border-radius: 20px;
+  }
+
+  .roadto-hero-photo img {
+    height: 240px;
+  }
+}
+
+/* Trasy: górne zdjęcie zastępujące dawną górną mapę */
+body.page-trasy .roadto-trasy-top-photo {
+  margin: 0 0 30px !important;
+  border-radius: 26px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(24, 55, 47, 0.14) !important;
+  box-shadow: 0 18px 48px rgba(24, 55, 47, 0.13) !important;
+  background: #102a24 !important;
+}
+
+body.page-trasy .roadto-trasy-top-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: clamp(260px, 42vw, 470px) !important;
+  object-fit: cover !important;
+}
+
+body.page-trasy article > .roadto-hero-photo {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  body.page-trasy .roadto-trasy-top-photo {
+    border-radius: 20px !important;
+  }
+
+  body.page-trasy .roadto-trasy-top-photo img {
+    height: 240px !important;
+  }
+}
