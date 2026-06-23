@@ -117,8 +117,14 @@ ROUTES = {
                         ("Temperatura", "-10°C do -15°C w nocy, 0–5°C po świcie, 10–15°C w Mweka Camp")],
                  desc="Start w środku nocy – w świetle czołówek, w ciszy, w chłodzie. Marsz jest wolny, każdy krok to wysiłek. Po świcie – Stella Point i emocje. Potem Uhuru Peak – najwyższy punkt Afryki. Zdjęcie, łzy, duma. Zejście to fizyczna walka: drżące nogi, osuwające się kamienie. Ale z każdym metrem w dół wraca ciepło i tlen. W Mweka Camp – odpoczynek, sen jak nagroda."),
         ],
-        table=None,
-        table_note="Tabela różnic wersji (6- a 7-dniowej) — do potwierdzenia ze strony.",
+        table=dict(
+            cols=["Wersja", "Aklimatyzacja", "Czas na regenerację", "Skuteczność wejścia"],
+            rows=[
+                ["7 dni", "mniejsza – brak noclegu w Shira 1", "mniej odpoczynku, intensywniejsze wejście", "umiarkowana (~80–85%)"],
+                ["8 dni", "lepsza – stopniowy wzrost wysokości (Shira 1 + Shira 2)", "więcej czasu na adaptację i sen", "bardzo wysoka (~90–95%)"],
+            ],
+            title="Różnice między wersją 7- a 8-dniową:",
+        ),
     ),
 
     # ------------------------------------------------------------------ #
@@ -216,8 +222,14 @@ ROUTES = {
                         ("Temperatura", "15–20°C"), ("Strefa", "od wrzosowisk do lasu deszczowego")],
                  desc="To długa, końcowa wędrówka – przez znajome już wrzosowiska, a następnie gęsty, zielony las deszczowy. Z każdym krokiem robi się coraz cieplej i wilgotniej, wracają dźwięki ptaków, zapachy ziemi i dżungli. Kolana dają znać o sobie, ale w sercu lekkość – zrobiłeś to. Przy Marangu Gate podpisujesz się na liście, odbierasz certyfikat, ściskasz rękę przewodnika. To koniec trekkingu, ale początek opowieści, która zostaje na zawsze."),
         ],
-        table=None,
-        table_note="Tabela różnic wersji (6- a 7-dniowej) — do potwierdzenia ze strony.",
+        table=dict(
+            cols=["Wersja", "Aklimatyzacja", "Czas na regenerację", "Skuteczność wejścia"],
+            rows=[
+                ["7 dni", "mniejsza – brak noclegu w Shira 1", "mniej odpoczynku, intensywniejsze wejście", "umiarkowana (~80–85%)"],
+                ["8 dni", "lepsza – stopniowy wzrost wysokości (Shira 1 + Shira 2)", "więcej czasu na adaptację i sen", "bardzo wysoka (~90–95%)"],
+            ],
+            title="Różnice między wersją 7- a 8-dniową:",
+        ),
     ),
 
     # ------------------------------------------------------------------ #
@@ -312,8 +324,14 @@ ROUTES = {
                         ("Temperatura", "15–25°C"), ("Strefa", "las deszczowy")],
                  desc="Powrót przez las deszczowy to jak przejście między dwoma światami. Wczoraj – lód, skały i najwyższy szczyt Afryki. Dziś – zieleń, zapach ziemi, śpiew ptaków. Szlak bywa śliski, błotnisty i nieco zdradliwy, ale już bez pośpiechu – krok po kroku wracasz do świata ludzi. Na dole, przy bramie parku, podpisujesz się w książce wejść, odbierasz certyfikat, ściskasz rękę przewodnika. Umbwe była surowa, dzika, wymagająca. I właśnie dlatego – nie do zapomnienia."),
         ],
-        table=None,
-        table_note="Tabela różnic wersji (5- a 6-dniowej) — do potwierdzenia ze strony.",
+        table=dict(
+            cols=["Wersja", "Aklimatyzacja", "Czas na regenerację", "Skuteczność wejścia"],
+            rows=[
+                ["7 dni", "mniejsza – brak noclegu w Shira 1", "mniej odpoczynku, intensywniejsze wejście", "umiarkowana (~80–85%)"],
+                ["8 dni", "lepsza – stopniowy wzrost wysokości (Shira 1 + Shira 2)", "więcej czasu na adaptację i sen", "bardzo wysoka (~90–95%)"],
+            ],
+            title="Różnice między wersją 7- a 8-dniową:",
+        ),
     ),
 
     # ------------------------------------------------------------------ #

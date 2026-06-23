@@ -104,3 +104,10 @@ Treść Sprzętu → `sprzet_data.py`, Safari → `safari_data.py`. Zmień → z
 - build_hub obsługuje teraz opcjonalny przycisk PDF (pole `pdf=(label, link)` w PAGES).
 - Etykieta przycisku ustawiona jako „Plan treningu oporowego do pobrania" — do potwierdzenia/zmiany,
   bo oryginalna nazwa nie zgrała się ze schowanego komponentu (edycja: pole `pdf` w PAGES["kilimandzaro/trening/oporowy"]).
+
+## Aktualizacja (sesja 23.06, część „Trasy — tabele Machame/Rongai/Umbwe")
+- Dodano tabelę „Różnice między wersją 7- a 8-dniową" do Machame, Rongai, Umbwe (były placeholdery table=None).
+  Dni tych tras zgadzały się 1:1 ze screenami — brakowało tylko tabeli. Treść tabeli 1:1 ze strony.
+- Wszystkie 8 tras ma teraz tabelę wersji (Marangu: 5–6; pozostałe: 7–8).
+- Pozostałe flagi do ewentualnej weryfikacji (notatki w trasy_data.py, nie blokują):
+  Shira i Northern Circuit mają tabelę „7/8 dni" mimo innej liczby dni trasy; Western Breach bez dni 1–2 (dojście).
