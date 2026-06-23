@@ -1,0 +1,17 @@
+# Lokalne pliki robocze z migracji Framera
+www.roadto.pl/
+framerusercontent.com/
+extracted-text/
+backups/
+
+# Tymczasowe listy obrazów i map
+all-images-full.txt
+all-images.txt
+all-png-svg.txt
+image-urls.txt
+map-files.txt
+maps.txt
+trasy-images.txt
+
+# Systemowe pliki macOS
+.DS_Store
