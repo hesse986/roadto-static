@@ -19,6 +19,7 @@ import html as html_mod
 from pathlib import Path
 
 from sprzet_data import INTRO as SPRZET_INTRO, CHECKLIST_PDF, SPRZET_SECTIONS
+from safari_data import SAFARI_INTRO, SAFARI_ATTRACTIONS
 
 ROOT = Path(__file__).resolve().parent
 SITE = ROOT / "site"
@@ -674,6 +675,40 @@ def build_sprzet(cfg):
 
 
 # --------------------------------------------------------------------------- #
+#  Safari i atrakcje — data-driven accordions (recovered 1:1 from Framer)
+# --------------------------------------------------------------------------- #
+
+def build_safari(cfg):
+    intro = f'<div class="lead-block"><p>{esc(SAFARI_INTRO)}</p></div>'
+
+    blocks, first_open = [], True
+    for a in SAFARI_ATTRACTIONS:
+        paras = "".join(f"<p>{esc(p)}</p>" for p in a["intro"])
+        tip = (f'<div class="safari-tip"><b>Tip:</b> {esc(a["tip"])}</div>'
+               if a.get("tip") else "")
+        rows = "".join(f"<dt>{esc(lab)}</dt><dd>{esc(txt)}</dd>" for lab, txt in a.get("info", []))
+        info = (f'<div class="safari-info"><h4>Informacje praktyczne</h4>'
+                f'<dl>{rows}</dl></div>') if rows else ""
+        open_attr = " open" if first_open else ""
+        first_open = False
+        blocks.append(
+            f'<details class="chapter"{open_attr}>'
+            f'<summary><span class="chapter__num chapter__num--glyph">▲</span>'
+            f'<span class="chapter__title">{esc(a["title"])}</span>{CHEV}</summary>'
+            f'<div class="chapter__body">{paras}{tip}{info}</div></details>'
+        )
+
+    html = (
+        head(cfg["title"], cfg.get("desc", "Co zobaczyć w Tanzanii po zejściu z Kilimandżaro."), "page-safari")
+        + nav(cfg.get("nav_current", "safari-atrakcje"))
+        + hero(cfg["title"], cfg.get("desc", ""), cfg["hero"], crumbs_html=crumbs(cfg.get("parent")))
+        + f'<main class="content"><div class="safari">{intro}{"".join(blocks)}</div></main>'
+        + footer()
+    )
+    return write("kilimandzaro/safari-atrakcje/index.html", html)
+
+
+# --------------------------------------------------------------------------- #
 def main():
     built = []
     built.append(build_home())
@@ -687,6 +722,8 @@ def main():
         cfg["nav_current"] = slug.split("/")[1] if slug.startswith("kilimandzaro/") else ""
         if slug == "kilimandzaro/sprzet":
             built.append(build_sprzet(cfg))
+        elif slug == "kilimandzaro/safari-atrakcje":
+            built.append(build_safari(cfg))
         elif cfg["kind"] == "hub":
             built.append(build_hub(slug, cfg))
         else:

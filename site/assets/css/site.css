@@ -620,3 +620,53 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
     text-transform: uppercase; color: var(--muted); margin-bottom: 1px;
   }
 }
+
+/* --------------------------------------------------------- SAFARI ----- */
+.safari { max-width: var(--readw); margin: 0 auto; padding: 0 22px; }
+.safari .chapter__body p { font-size: 16.5px; margin: 0 0 14px; }
+.safari .chapter__body > :first-child { margin-top: 14px; }
+
+.safari-tip {
+  background: var(--paper-2);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 18px 0;
+  color: #34302a;
+}
+.safari-tip b { color: var(--forest-800); }
+
+.safari-info {
+  margin: 18px 0 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card);
+}
+.safari-info > h4 {
+  margin: 0;
+  background: var(--forest-700);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .02em;
+  padding: 10px 16px;
+}
+.safari-info dl { margin: 0; display: grid; grid-template-columns: 170px 1fr; }
+.safari-info dt {
+  font-weight: 700; color: var(--forest-800);
+  padding: 12px 16px; border-top: 1px solid var(--line);
+}
+.safari-info dd {
+  margin: 0; padding: 12px 16px; border-top: 1px solid var(--line);
+  color: #34302a;
+}
+.safari-info dl > dt:first-of-type,
+.safari-info dl > dd:first-of-type { border-top: 0; }
+
+@media (max-width: 600px) {
+  .safari-info dl { grid-template-columns: 1fr; }
+  .safari-info dd { padding-top: 0; border-top: 0; }
+  .safari-info dl > dd:first-of-type { border-top: 0; }
+}
