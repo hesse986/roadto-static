@@ -55,6 +55,19 @@ SECTIONS = [
 HOME_HERO = f"{IMG}/U1TVwvGpfYQZaWxhY1aL5ZumEg.jpg"
 KILI_HERO = f"{IMG}/ql6eidHyNj0Dirq3cHNYkDZIsC8.jpg"
 
+# Logistyka — strona UKRYTA z nav/stopki/kafelków (poza SECTIONS), ale żywa pod URL
+# (np. dla kodu QR). Ma własny przycisk PDF (checklista). Edytuj link tutaj.
+LOGISTYKA_PDF = "https://drive.google.com/file/d/1fAYKOABLi14s1Ha8yBfh7focra7c-1ic/view"
+LOGISTYKA_INTRO = (
+    "Każda wyprawa zaczyna się dużo wcześniej niż na szlaku. To godziny planowania, "
+    "kompletowania sprzętu, załatwiania formalności i dbania o szczegóły, które później "
+    "pozwalają w pełni cieszyć się drogą na szczyt. Z doświadczenia wiemy, że im lepiej "
+    "przygotowana logistyka, tym mniej stresu w ostatnich dniach przed wyjazdem. Dlatego "
+    "stworzyliśmy checklistę – prostą listę kroków do odhaczenia, która pomoże Ci upewnić "
+    "się, że masz wszystko pod kontrolą. Pobierz ją i potraktuj jako swojego asystenta w "
+    "drodze do mistrzowskiego przygotowania."
+)
+
 # title / hero / description / source for each page; "kind" = leaf | hub
 PAGES = {
     "kilimandzaro/dieta":      dict(title="Dieta", hero=f"{IMG}/H0PBmA3u828lCjParlI7uB0qzdc.jpg", kind="leaf", parent=("Kilimandżaro", "/kilimandzaro/")),
@@ -640,6 +653,23 @@ def _gear_table(caption, cols, rows):
             f'</table></div>')
 
 
+def build_logistyka(cfg):
+    # Strona ukryta w menu (nie ma jej w SECTIONS), ale generowana pod URL.
+    pdf_btn = ""
+    if LOGISTYKA_PDF and LOGISTYKA_PDF != "#":
+        pdf_btn = (f'<a class="btn btn--gold" href="{LOGISTYKA_PDF}" target="_blank" '
+                   f'rel="noopener">Checklista do pobrania (PDF) {ARROW}</a>')
+    lead = f'<div class="lead-block"><p>{esc(LOGISTYKA_INTRO)}</p>{pdf_btn}</div>'
+    html = (
+        head(cfg["title"], "Logistyka wyprawy na Kilimandżaro — checklista przygotowań do pobrania.")
+        + nav(cfg.get("nav_current", ""))
+        + hero(cfg["title"], "mistrzowskie przygotowanie", cfg["hero"], crumbs_html=crumbs(cfg.get("parent")))
+        + f'<main class="content"><div class="content__col">{lead}</div></main>'
+        + footer()
+    )
+    return write("kilimandzaro/logistyka/index.html", html)
+
+
 def build_sprzet(cfg):
     pdf_btn = ""
     if CHECKLIST_PDF and CHECKLIST_PDF != "#":
@@ -936,6 +966,8 @@ def main():
             built.append(build_safari(cfg))
         elif slug == "kilimandzaro/zdrowie":
             built.append(build_zdrowie(cfg))
+        elif slug == "kilimandzaro/logistyka":
+            built.append(build_logistyka(cfg))
         elif slug in (
             "kilimandzaro/trening/oporowy/nogi-posladki",
             "kilimandzaro/trening/oporowy/core",

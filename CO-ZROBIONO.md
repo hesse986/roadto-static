@@ -83,3 +83,9 @@ Treść Sprzętu → `sprzet_data.py`, Safari → `safari_data.py`. Zmień → z
 - Poprawiono literówkę medyczną: Żółta Febra „immunokompetentnych" → „immunoniekompetentnych".
 - Ustalono: w oryginale były 4 przyciski pobierania (4. = checklista na ukrytej stronie Logistyka).
   PENDING: link do Logistyki — strona ma pozostać ukryta w menu.
+
+## Aktualizacja (sesja 23.06, część „Logistyka PDF")
+- Podpięto 4. (ostatni) plik PDF: checklista na stronie Logistyka (link Google Drive).
+- Dodano dedykowany renderer `build_logistyka` (hero + wstęp 1:1 + przycisk „Checklista do pobrania").
+- Logistyka POZOSTAJE ukryta w menu/stopce/kafelkach (0 linków w serwisie) — dostępna tylko pod URL.
+- Komplet: wszystkie 4 przyciski pobierania aktywne (Ekwipunek, Apteczka, Poradnik, Checklista).

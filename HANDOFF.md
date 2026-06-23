@@ -57,9 +57,11 @@ regenerację (tak jak `build_trasy`/`build_home`).
    - `CHECKLIST_PDF` w `sprzet_data.py` — „Ekwipunek niezbędny na wyprawę" ✓
    - `APTECZKA_PDF` w `zdrowie_data.py` — „Apteczka do pobrania" ✓
    - `PORADNIK_PDF` w `zdrowie_data.py` — „Poradnik do pobrania" ✓
-   PENDING — **Logistyka (checklista)**: właściciel ma uruchomić link, ALE strona Logistyka
-   ma POZOSTAĆ ukryta z nav/stopki/kafelków. Gdy poda link: dodać stałą (np. `LOGISTYKA_PDF`)
-   i podpiąć przycisk w renderze logistyki — strona dalej niewidoczna w menu, ale żywa pod URL.
+   - **Logistyka (checklista)** — ZROBIONE: link podpięty (`LOGISTYKA_PDF` w `build_site.py`),
+     dedykowany renderer `build_logistyka` (hero „Logistyka / mistrzowskie przygotowanie" +
+     wstęp 1:1 + przycisk „Checklista do pobrania"). Strona NADAL ukryta z nav/stopki/kafelków
+     (0 linków do `/logistyka/` w serwisie), żywa tylko pod URL. Aby ją pokazać w menu:
+     odkomentuj/dodaj wpis „logistyka" w `SECTIONS`. ⇒ Wszystkie 4 PDF-y aktywne.
 3. **Literówka medyczna** — ZROBIONE: Żółta Febra „immunokompetentnych" → „immunoniekompetentnych"
    (`zdrowie_data.py`, VACCINES[0]).
 4. **Zdjęcia atrakcji Safari** — pliki nieobecne w repo; strony tekstowe.
