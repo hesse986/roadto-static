@@ -1,0 +1,296 @@
+:root {
+  --rtk-forest: #244c42;
+  --rtk-forest-dark: #18372f;
+  --rtk-forest-deep: #102a24;
+  --rtk-paper: #f4f0e7;
+  --rtk-cream: #fffaf0;
+  --rtk-white: #ffffff;
+  --rtk-ink: #1f2421;
+  --rtk-muted: #6f6a60;
+  --rtk-border: #ddd4c4;
+  --rtk-yellow: #e0b900;
+  --rtk-gold: #c49a42;
+  --rtk-teal: #177d79;
+  --rtk-shadow: 0 18px 54px rgba(24, 55, 47, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(224, 185, 0, 0.12), transparent 28rem),
+    radial-gradient(circle at bottom right, rgba(36, 76, 66, 0.16), transparent 34rem),
+    var(--rtk-paper) !important;
+  color: var(--rtk-ink) !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(36, 76, 66, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 76, 66, 0.026) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+  z-index: -1;
+}
+
+header {
+  background:
+    linear-gradient(90deg, rgba(16, 42, 36, 0.96), rgba(36, 76, 66, 0.90)),
+    url("/assets/images/brand/pattern-green.jpg") center / cover !important;
+  color: white !important;
+  border-bottom: 0 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -50% -10%;
+  height: 240px;
+  background: radial-gradient(ellipse at center, rgba(224, 185, 0, 0.22), transparent 68%);
+  pointer-events: none;
+}
+
+header .wrap,
+header nav,
+header .brand,
+header h1,
+header .lead {
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  color: white !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900 !important;
+  font-size: 15px;
+  letter-spacing: .12em !important;
+  text-transform: uppercase;
+}
+
+.brand::before {
+  content: "";
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+  border-radius: 50%;
+  background:
+    linear-gradient(135deg, var(--rtk-yellow), #f3d65c);
+  box-shadow:
+    inset 0 0 0 7px rgba(255,255,255,.22),
+    0 8px 22px rgba(0,0,0,.22);
+}
+
+header h1,
+.hero h1 {
+  color: white !important;
+}
+
+header .lead,
+header p {
+  color: rgba(255,255,255,.84) !important;
+}
+
+header nav a {
+  background: rgba(255,255,255,.10) !important;
+  color: white !important;
+  border-color: rgba(255,255,255,.22) !important;
+  backdrop-filter: blur(10px);
+}
+
+header nav a:hover {
+  background: rgba(255,255,255,.18) !important;
+}
+
+main {
+  position: relative;
+}
+
+article,
+.hero,
+.card,
+a.card {
+  border-color: rgba(24, 55, 47, 0.13) !important;
+  box-shadow: var(--rtk-shadow) !important;
+}
+
+article,
+.hero,
+.card {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,250,240,.96)) !important;
+}
+
+article {
+  position: relative;
+  overflow: hidden;
+}
+
+article::before {
+  content: "";
+  display: block;
+  height: 8px;
+  background: linear-gradient(90deg, var(--rtk-forest-dark), var(--rtk-yellow), var(--rtk-teal));
+  margin: -30px -30px 28px;
+}
+
+h1 {
+  color: var(--rtk-forest-dark);
+}
+
+article h1 {
+  color: var(--rtk-forest-dark) !important;
+}
+
+h2 {
+  color: var(--rtk-forest) !important;
+}
+
+p {
+  color: var(--rtk-ink);
+}
+
+a {
+  color: var(--rtk-forest);
+}
+
+.breadcrumb {
+  color: var(--rtk-muted) !important;
+}
+
+.breadcrumb a {
+  color: var(--rtk-forest) !important;
+  font-weight: 800;
+}
+
+nav a,
+a.button,
+a.secondary,
+.links a,
+a.card {
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+}
+
+nav a:hover,
+a.button:hover,
+a.secondary:hover,
+.links a:hover,
+a.card:hover {
+  transform: translateY(-2px);
+}
+
+a.button,
+a.primary {
+  background: var(--rtk-forest-dark) !important;
+  color: white !important;
+  border-color: var(--rtk-forest-dark) !important;
+}
+
+a.button:hover,
+a.primary:hover {
+  background: var(--rtk-forest-deep) !important;
+}
+
+a.secondary,
+.links a:not(.primary) {
+  color: var(--rtk-forest-dark) !important;
+  background: white !important;
+  border-color: rgba(24, 55, 47, 0.18) !important;
+}
+
+.grid a.card {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,250,240,.98)) !important;
+  border-radius: 26px !important;
+}
+
+.grid a.card h2 {
+  color: var(--rtk-forest-dark) !important;
+}
+
+.grid a.card h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  margin-top: 10px;
+  background: var(--rtk-yellow);
+}
+
+.grid a.card p {
+  color: var(--rtk-muted) !important;
+}
+
+.section-nav {
+  background:
+    linear-gradient(135deg, rgba(36, 76, 66, 0.08), rgba(224, 185, 0, 0.08));
+  border-radius: 22px;
+  padding: 22px !important;
+  border-top: 0 !important;
+}
+
+.section-nav nav a {
+  background: white !important;
+  color: var(--rtk-forest-dark) !important;
+  border-color: rgba(24, 55, 47, 0.14) !important;
+}
+
+footer {
+  background:
+    linear-gradient(90deg, rgba(16, 42, 36, 0.98), rgba(36, 76, 66, 0.94)),
+    url("/assets/images/brand/pattern-green.jpg") center / cover !important;
+  color: rgba(255,255,255,.74) !important;
+  border-top: 0 !important;
+}
+
+footer a {
+  color: white !important;
+}
+
+.roadto-photo-strip {
+  margin: 30px 0;
+  border-radius: 26px;
+  min-height: 280px;
+  background:
+    linear-gradient(135deg, rgba(16,42,36,.68), rgba(36,76,66,.28)),
+    var(--rtk-forest);
+  overflow: hidden;
+}
+
+.roadto-kicker {
+  color: var(--rtk-yellow);
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  header {
+    padding-top: 24px !important;
+  }
+
+  article::before {
+    margin: -22px -22px 22px;
+  }
+
+  .brand::before {
+    width: 28px;
+    height: 28px;
+  }
+}
