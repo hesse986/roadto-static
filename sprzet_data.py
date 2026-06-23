@@ -25,7 +25,7 @@ INTRO = (
 
 # Link do PDF-a „Ekwipunek niezbędny na wyprawę" (Google Drive).
 # TODO: wklej tu właściwy link; "#" = placeholder.
-CHECKLIST_PDF = "#"
+CHECKLIST_PDF = "https://drive.google.com/file/d/14-ut4ORqLyJEfPICnr1vh-QnoNWwJcIA/view"
 
 WAC = ["Waga", "Atuty", "Cena"]
 MAC = ["Materiał", "Atuty", "Cena"]

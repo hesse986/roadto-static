@@ -670,3 +670,105 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .safari-info dd { padding-top: 0; border-top: 0; }
   .safari-info dl > dd:first-of-type { border-top: 0; }
 }
+
+/* ------------------------------------------------------- TRENING (ćwiczenia) */
+.ex-lead { max-width: var(--readw); margin: 0 auto 8px; }
+.ex-lead p { font-size: 18px; color: #33302a; }
+
+.ex-body > :first-child { margin-top: 12px; }
+.ex-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--forest-800);
+  margin: 16px 0 6px;
+}
+.ex-list { list-style: none; margin: 4px 0 14px; padding: 0; }
+.ex-list li {
+  position: relative;
+  padding: 0 0 0 30px;
+  margin: 0 0 8px;
+  color: #34302a;
+}
+.ex-list li::before {
+  position: absolute;
+  left: 0; top: -1px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.ex-list--check li::before { content: "✓"; color: var(--gold); }
+.ex-list--arrow li::before { content: "→"; color: var(--gold); }
+.ex-list--x li::before {
+  content: "✕"; color: var(--rust);
+  font-size: 13px; top: 1px;
+  width: 18px; height: 18px;
+  border: 1.6px solid var(--rust); border-radius: 50%;
+  display: grid; place-items: center;
+}
+.ex-list--x li { padding-left: 30px; }
+
+.ex-tip {
+  background: var(--paper-2);
+  border: 1.5px solid var(--gold);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin: 18px 0 2px;
+}
+.ex-tip__h {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--forest-800);
+  display: flex; align-items: center; gap: 8px;
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+.ex-tip__h svg { width: 18px; height: 18px; color: var(--gold); flex: 0 0 auto; }
+.ex-tip p { margin: 0; color: #34302a; }
+.ex-sub { color: var(--muted); font-style: italic; margin: -2px 0 10px; }
+
+/* ------------------------------------------------------- ZDROWIE (szczepienia) */
+.vax-h3 { font-family: var(--font-display); font-weight: 700; font-size: 18px;
+  color: var(--forest-800); margin: 22px 0 10px; }
+.section-intro { max-width: var(--readw); color: #33302a; }
+
+/* zielony ✓ w nagłówku rozwijanej sekcji szczepienia */
+.chapter__num--check { background: transparent; border: none; color: var(--forest-600);
+  font-size: 19px; line-height: 1; }
+
+/* pod-nagłówki w opisie szczepienia (Czym jest / Schemat / itd.) */
+.vax-q { font-family: var(--font-display); font-weight: 700; font-size: 15.5px;
+  color: var(--forest-800); margin: 18px 0 6px; }
+.chapter__body .vax-q:first-child { margin-top: 4px; }
+
+/* lista z zielonym haczykiem (ochrona przed komarami) */
+.vax-check { list-style: none; margin: 8px 0 14px; padding: 0; }
+.vax-check li { position: relative; padding-left: 32px; margin: 0 0 9px; color: #34302a; }
+.vax-check li::before { content: "✓"; position: absolute; left: 0; top: 1px;
+  color: #fff; background: var(--forest-600); width: 20px; height: 20px;
+  border-radius: 6px; display: grid; place-items: center; font-size: 12px; font-weight: 800; }
+
+/* trzy kolumny ryzyka malarii */
+.vax-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0 16px; }
+.vax-col { border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  background: var(--card); display: flex; flex-direction: column; }
+.vax-col__h { background: var(--forest-700); color: #fff; font-family: var(--font-display);
+  font-weight: 700; font-size: 13.5px; text-align: center; padding: 11px 12px; line-height: 1.3; }
+.vax-col__b { padding: 13px 15px; font-size: 14.5px; }
+.vax-col__b p { margin: 0 0 9px; }
+.vax-col__b p:last-child { margin-bottom: 0; }
+.vax-col__b ul { margin: 6px 0 9px; padding-left: 20px; }
+.vax-col__b li { margin: 0 0 4px; }
+@media (max-width: 760px) { .vax-cols { grid-template-columns: 1fr; } }
+
+/* numerowane kroki „Praktyczne szczegóły" */
+.vax-steps { counter-reset: s; list-style: none; padding: 0; margin: 14px 0 6px;
+  max-width: var(--readw); }
+.vax-steps li { position: relative; padding-left: 46px; margin: 0 0 16px;
+  counter-increment: s; color: #33302a; }
+.vax-steps li::before { content: counter(s); position: absolute; left: 0; top: -2px;
+  width: 30px; height: 30px; border-radius: 9px; background: var(--gold-soft);
+  border: 1px solid var(--gold); color: var(--forest-900); font-weight: 800;
+  display: grid; place-items: center; font-size: 14px; }
+
+.pdf-todo { color: var(--muted); font-style: italic; margin: 12px 0 0; }

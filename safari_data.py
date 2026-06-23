@@ -7,15 +7,82 @@ Każda atrakcja = rozwijana sekcja (akordeon). Edytujesz tu, potem
 
 Struktura:
   SAFARI_ATTRACTIONS = [ {title, intro:[akapity], tip, info:[(etykieta, tekst)...]} ]
+Kolejność jak w oryginale (Framer).
 """
 
 SAFARI_INTRO = (
     "Kilimandżaro to dopiero początek. Wokół Moshi i Arushy — a także nieco dalej, "
-    "nad oceanem — czeka cała Tanzania: wodospady, gorące źródła, dziki wulkan i "
-    "rajskie plaże. Poniżej kilka miejsc, które warto połączyć z wyprawą na dach Afryki."
+    "nad oceanem — czeka cała Tanzania: wulkany, jeziora w kraterach, gorące źródła, "
+    "parki pełne zwierząt i rajskie plaże. Poniżej miejsca, które warto połączyć "
+    "z wyprawą na dach Afryki."
 )
 
 SAFARI_ATTRACTIONS = [
+    {
+        "title": "Jezioro Chala — błękitne oko wulkanu na granicy dwóch światów",
+        "intro": [
+            "Na wschodnim krańcu Tanzanii, tuż przy granicy z Kenią, leży jezioro, które wygląda jak klejnot ukryty w kraterze — Jezioro Chala. To wulkaniczne cudo ma kolor, który trudno opisać jednym słowem: czasem turkus, czasem szafir, a czasem zielone szkło. Zmienia się jak nastroje pogody.",
+            "Gdy stoisz na krawędzi krateru i patrzysz w dół, czujesz, jak ziemia oddycha. Powietrze pachnie pyłem i suchą trawą, a echo niesie odgłos ptaków. W oddali widać sylwetkę Kilimandżaro, a w dole taflę wody tak spokojną, że wydaje się, jakby czas naprawdę się zatrzymał.",
+            "To miejsce ma w sobie spokój i tajemnicę. Woda jeziora pochodzi z podziemnych źródeł Kilimandżaro i jest tak czysta, że odbija wszystko jak lustro. Wokół krateru wije się ścieżka, którą można zejść aż nad brzeg — strome zejście, ale nagroda warta wysiłku.",
+            "Lokalne plemię Chagga wierzy, że w jeziorze mieszka duch kobiety, która z rozpaczy po utraconej miłości rzuciła się w jego wody. Mówią, że dlatego jezioro ma kolor jej oczu. I faktycznie — gdy słońce zachodzi, powierzchnia nabiera barwy turkusu z nutą melancholii.",
+            "Na brzegu działa niewielki Chala Safari Camp — miejsce, gdzie można napić się zimnego piwa, obserwując pawiany i małpy colobus, które grasują po okolicy. Nocą słychać tu świerszcze i wiatr, a nad wodą pojawia się tysiąc gwiazd.",
+            "To idealne miejsce na jednodniowy wypad po Kilimandżaro albo na spokojny weekend z dala od tłumów. Nie ma tu zasięgu, nie ma pośpiechu — tylko natura i cisza, która koi.",
+        ],
+        "tip": "Zabierz lornetkę — ptaki w Chala to uczta dla każdego, kto lubi obserwacje przyrody.",
+        "info": [
+            ("Jak się dostać", "Z Moshi ok. 1,5 godziny (ok. 55 km). Dojazd boda-bodą lub samochodem 4x4 (droga częściowo szutrowa). Możliwy transport z agencji."),
+            ("Koszt", "Wstęp ok. 10 USD. Kemping i nocleg w Chala Safari Camp od 30 USD/noc."),
+            ("Warto wiedzieć", "Nie kąp się daleko od brzegu – dno gwałtownie opada. Weź wodę i przekąski – w okolicy brak sklepów."),
+        ],
+    },
+    {
+        "title": "Ol Doinyo Lengai & Jezioro Natron — kraina ognia, popiołu i soli",
+        "intro": [
+            "Tam, gdzie kończą się asfaltowe drogi, a ziemia staje się czerwona jak ogień, zaczyna się inny świat. Ol Doinyo Lengai, „Góra Boga” Masajów, góruje nad horyzontem niczym strażnik czasu. To jedyny aktywny wulkan w Tanzanii i zarazem najbardziej niezwykły – jego lawa jest zimna w dotyku i ma kolor popiołu.",
+            "U stóp góry rozlewa się Jezioro Natron — różowe, błyszczące i nierealne. Woda jest tak zasadowa, że przypomina płynną sól. W jej pobliżu nie ma drzew, nie ma cienia — tylko cisza, która dudni w uszach. To królestwo flamingów, które właśnie tu zakładają największe kolonie lęgowe w Afryce.",
+            "Trekking na Ol Doinyo Lengai to przygoda dla odważnych. Start o północy, wejście po ciemku przy świetle latarek. Szlak stromy, kamienisty, wymagający, ale nagroda? Wschód słońca nad Jezioro Natron – morze chmur, różowa tafla jeziora i widok, który zostaje w głowie na zawsze.",
+            "Masajowie wierzą, że szczyt jest miejscem, gdzie bóg Eng’ai zsyła błogosławieństwo. Czasem, gdy wulkan „kicha” popiołem, mówią, że to jego śmiech. Wspinaczka tutaj to nie tylko wyzwanie fizyczne, ale też duchowe.",
+            "W dolinie Natron warto odwiedzić wodospady Engare Sero – ukryte między skałami, dają wytchnienie po piekielnym upale. Woda jest tu chłodna, a kąpiel po wspinaczce – jak chrzest dla ciała.",
+        ],
+        "tip": "Zabierz okulary przeciwsłoneczne, chustę i mnóstwo wody. To jedno z najbardziej surowych miejsc w Tanzanii, ale też jedno z najbardziej magicznych.",
+        "info": [
+            ("Jak się dostać", "Z Mto wa Mbu do Lake Natron ok. 5 godzin jazdy 4x4. Z Arusha ok. 7 godzin. Najłatwiej zorganizować wyprawę z agencją (transport, nocleg, przewodnik)."),
+            ("Koszt", "Wstęp do rejonu Natron ok. 10 USD, przewodnik Masaj – 10–20 USD. Trekking na Lengai – 100–150 USD (z nocnym wejściem)."),
+            ("Warto wiedzieć", "Koniecznie buty trekkingowe i zapas wody. Weź powerbank – brak prądu i zasięgu. Najlepszy czas: czerwiec–październik (pora sucha)."),
+        ],
+    },
+    {
+        "title": "Arusha National Park — Tanzania w miniaturze",
+        "intro": [
+            "Zaledwie godzinę drogi od miasta Arusha leży park, który potrafi zaskoczyć. Arusha National Park to mały, ale różnorodny mikrokosmos Tanzanii: od sawanny, przez jeziora, po las deszczowy i górskie szczyty.",
+            "Gdy wjedziesz przez bramę Momella, krajobraz zmienia się z każdą minutą. Z lewej strony migoczą jeziora Momella, w których odbijają się chmury i flamingi, z prawej wznosi się majestatyczne Mount Meru, a w środku — las, gdzie żyją żyrafy, bawoły i colobusy z czarno-białym futrem.",
+            "Nie zobaczysz tu lwów, ale za to możesz przeżyć coś wyjątkowego: safari piesze. Uzbrojony ranger prowadzi cię ścieżką, po której przed chwilą przeszła żyrafa. Słyszysz każdy szelest, każdy śpiew ptaka — to nie przejazd w jeepie, to wejście do świata przyrody bez filtra.",
+            "Park jest też bramą na Mount Meru — dla wielu wspinaczy to pierwszy etap przed Kilimandżaro. Ale nawet bez trekkingu, samo spojrzenie na górę z punktu widokowego Ngurdoto Crater potrafi przyprawić o dreszcz.",
+            "Woda w jeziorach mieni się różnymi kolorami — od niebieskiego po zielony, w zależności od minerałów i światła. To miejsce, które zmienia się z każdą godziną dnia.",
+        ],
+        "tip": "Zabierz aparat i cierpliwość – tu nie chodzi o ilość zwierząt, tylko o bliskość natury.",
+        "info": [
+            ("Jak się dostać", "Z Arusha ok. 45 min jazdy. Dojazd możliwy prywatnie lub z agencją."),
+            ("Koszt", "Wstęp: 50 USD. Safari piesze: ok. 30 USD z rangerem."),
+            ("Warto wiedzieć", "Park czynny cały rok. W porze deszczowej (marzec–maj) las jest soczyście zielony. Napiwki dla rangersów: 10 USD/dzień."),
+        ],
+    },
+    {
+        "title": "Lake Manyara — las, jezioro i lwy na drzewach",
+        "intro": [
+            "Witaj w świecie, w którym sawanna spotyka wodę. Lake Manyara National Park to miejsce pełne kontrastów: z jednej strony gęsty las figowców, z drugiej bezkresne jezioro, w którym odbija się niebo.",
+            "Kiedy wjeżdżasz do parku, pierwsze co czujesz to zapach — mieszanka wilgoci, błota i kwiatów. Potem widzisz żyrafy, które przemykają między drzewami jak duchy. Dalej — słonie brodzące w błocie, stada bawołów i hipopotamy, które chrapią w wodzie jakby śniły o spokojnym świecie.",
+            "Ale Manyara słynie z jednego: lwów, które wspinają się na drzewa. To rzadki widok — ogromne koty leżące na gałęziach akacji, zwisające łapami jak kot domowy na parapecie. To obraz, którego nie da się zapomnieć.",
+            "Warto zatrzymać się też przy gorących źródłach Maji Moto, gdzie woda bąbelkuje w ziemi. A jeśli lubisz obserwować ptaki — tu znajdziesz ich setki: pelikany, ibisy, bociany i tysiące flamingów. Park jest mały, ale pełen życia.",
+            "W ciągu jednego dnia zobaczysz więcej niż w niejednym dużym parku.",
+        ],
+        "tip": "Najlepsze światło do zdjęć jest po południu, gdy słońce odbija się w jeziorze.",
+        "info": [
+            ("Jak się dostać", "Z Arusha ok. 2 godziny jazdy (125 km). Agencje oferują safari 1-dniowe."),
+            ("Koszt", "Wstęp: 50 USD. Safari z przewodnikiem – 150–180 USD."),
+            ("Warto wiedzieć", "Pora sucha (czerwiec–październik) to najlepszy czas na lwy. Napiwki: 10–15 USD/dzień."),
+        ],
+    },
     {
         "title": "Mount Meru — mniej znana siostra Kilimandżaro",
         "intro": [

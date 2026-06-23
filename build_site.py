@@ -20,6 +20,8 @@ from pathlib import Path
 
 from sprzet_data import INTRO as SPRZET_INTRO, CHECKLIST_PDF, SPRZET_SECTIONS
 from safari_data import SAFARI_INTRO, SAFARI_ATTRACTIONS
+from zdrowie_data import (ZDROWIE_INTRO, SZCZEPIENIA_INTRO, VACCINES, PRAKTYCZNE,
+                          APTECZKA_INTRO, PORADNIK_INTRO, APTECZKA_PDF, PORADNIK_PDF)
 
 ROOT = Path(__file__).resolve().parent
 SITE = ROOT / "site"
@@ -44,10 +46,10 @@ SECTIONS = [
         "Techniki oddechowe na szlak — i na co dzień."),
     ("sprzet",          "Sprzęt",            f"{IMG}/fytbLmLZUxa0J5Ki5kxiopTog.jpg",
         "Co spakować i jak przygotować ekwipunek na Kilimandżaro."),
-    ("logistyka",       "Logistyka",         f"{IMG}/fAOAXfHCeMpDiLn9f2Aqhivwc.jpg",
-        "Organizacja wyjazdu, formalności i praktyczne informacje."),
     ("safari-atrakcje", "Safari i atrakcje", f"{IMG}/JaRO5dK2imchTtLi1gO4U6411o.jpg",
         "Co zobaczyć w Tanzanii po zejściu z góry."),
+    # „Logistyka" ukryta z nawigacji/landingu na życzenie (strona pusta).
+    # URL /kilimandzaro/logistyka/ nadal się generuje (gdyby prowadził do niego kod QR).
 ]
 
 HOME_HERO = f"{IMG}/U1TVwvGpfYQZaWxhY1aL5ZumEg.jpg"
@@ -709,6 +711,214 @@ def build_safari(cfg):
 
 
 # --------------------------------------------------------------------------- #
+#  Trening — exercise pages (parsed from existing scraped content)
+# --------------------------------------------------------------------------- #
+
+BULB = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+        'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        '<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1h6c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z"/></svg>')
+
+_EX_LABELS = {
+    "pozycja startowa": ("Pozycja startowa", "check"),
+    "ruch": ("Ruch", "arrow"),
+    "najczęstsze błędy": ("Najczęstsze błędy", "x"),
+    "warianty": ("Warianty", "arrow"),
+}
+
+
+def _ex_norm(t):
+    return t.strip().lower().rstrip(":").strip()
+
+
+def _split_title(pending):
+    """pending = list of lines before a 'Pozycja startowa:'.
+    title = last line not starting with '('; rest-after = subtitle; before = intro."""
+    if not pending:
+        return ("Ćwiczenie", "", [])
+    title_idx = 0
+    for i, x in enumerate(pending):
+        if not x.strip().startswith("("):
+            title_idx = i
+    title = pending[title_idx]
+    subtitle = " ".join(pending[title_idx + 1:]).strip()
+    intro = pending[:title_idx]
+    return (title, subtitle, intro)
+
+
+def _parse_exercises(items):
+    exercises, intro = [], []
+    cur, section, pending, expect_tip = None, None, [], False
+    for _, t in items:
+        n = _ex_norm(t)
+        if n == "pozycja startowa":
+            title, subtitle, leftover = _split_title(pending)
+            if not exercises:
+                intro.extend(leftover)
+            pending = []
+            cur = dict(title=title, subtitle=subtitle, secs=[], tip="")
+            exercises.append(cur)
+            cur["secs"].append(["Pozycja startowa", "check", []])
+            section = cur["secs"][-1][2]
+            expect_tip = False
+            continue
+        if n in ("ruch", "najczęstsze błędy", "warianty") and cur is not None:
+            label, icon = _EX_LABELS[n]
+            cur["secs"].append([label, icon, []])
+            section = cur["secs"][-1][2]
+            expect_tip = False
+            continue
+        if n == "wskazówka trenera":
+            expect_tip = True
+            section = None
+            continue
+        # content line
+        if expect_tip:
+            if cur is not None and not cur["tip"]:
+                cur["tip"] = t
+            else:
+                pending.append(t)
+                expect_tip = False
+            continue
+        if section is not None:
+            section.append(t)
+        else:
+            pending.append(t)
+    return intro, exercises
+
+
+def build_training_exercise(slug, cfg):
+    src = SRC / slug / "index.html"
+    items = extract_items(src) if src.exists() else []
+    intro, exercises = _parse_exercises(items)
+
+    lead = ""
+    intro = [p for p in intro if not p.lower().startswith("ćwiczenia na")]
+    if intro:
+        lead = '<div class="ex-lead">' + "".join(f"<p>{esc(p)}</p>" for p in intro) + "</div>"
+
+    blocks, first_open = [], True
+    for ex in exercises:
+        body = ""
+        for label, icon, bullets in ex["secs"]:
+            if not bullets:
+                continue
+            lis = "".join(f"<li>{esc(b)}</li>" for b in bullets)
+            body += (f'<p class="ex-label">{esc(label)}</p>'
+                     f'<ul class="ex-list ex-list--{icon}">{lis}</ul>')
+        sub = f'<p class="ex-sub">{esc(ex["subtitle"])}</p>' if ex["subtitle"] else ""
+        tip = ""
+        if ex["tip"]:
+            tip = (f'<div class="ex-tip"><p class="ex-tip__h">{BULB}'
+                   f'Wskazówka trenera</p><p>{esc(ex["tip"])}</p></div>')
+        open_attr = " open" if first_open else ""
+        first_open = False
+        blocks.append(
+            f'<details class="chapter"{open_attr}>'
+            f'<summary><span class="chapter__num chapter__num--glyph">▲</span>'
+            f'<span class="chapter__title">{esc(ex["title"])}</span>{CHEV}</summary>'
+            f'<div class="chapter__body">{sub}<div class="ex-body">{body}</div>{tip}</div>'
+            f'</details>'
+        )
+
+    html = (
+        head(cfg["title"], cfg.get("desc", f'{cfg["title"]} — ćwiczenia przygotowujące na Kilimandżaro.'), "page-trening")
+        + nav(cfg.get("nav_current", "trening"))
+        + hero(cfg["title"], cfg.get("desc", ""), cfg["hero"], crumbs_html=crumbs(cfg.get("parent")))
+        + f'<main class="content"><div class="content__col">{lead}{"".join(blocks)}</div></main>'
+        + footer()
+    )
+    return write(slug + "/index.html", html)
+
+
+# --------------------------------------------------------------------------- #
+#  Zdrowie — szczepienia jako rozwijane sekcje (treść odzyskana z Framera)
+# --------------------------------------------------------------------------- #
+
+def _rich(s):
+    """Escape + zamień **pogrubienie** na <strong>."""
+    out = ""
+    for i, part in enumerate(esc(s).split("**")):
+        out += f"<strong>{part}</strong>" if i % 2 == 1 else part
+    return out
+
+
+def _zd_block(b):
+    kind = b[0]
+    if kind == "h":
+        return f'<h4 class="vax-q">{esc(b[1])}</h4>'
+    if kind == "p":
+        return f'<p>{_rich(b[1])}</p>'
+    if kind == "ul":
+        return "<ul>" + "".join(f"<li>{_rich(x)}</li>" for x in b[1]) + "</ul>"
+    if kind == "check":
+        return ('<ul class="vax-check">'
+                + "".join(f"<li>{_rich(x)}</li>" for x in b[1]) + "</ul>")
+    if kind == "cols":
+        cards = ""
+        for header, blocks in b[1]:
+            inner = "".join(_zd_block(x) for x in blocks)
+            cards += (f'<div class="vax-col"><div class="vax-col__h">{esc(header)}</div>'
+                      f'<div class="vax-col__b">{inner}</div></div>')
+        return f'<div class="vax-cols">{cards}</div>'
+    if kind == "table":
+        _, cap, cols, rows = b
+        return _gear_table(cap, cols, rows)
+    return ""
+
+
+def build_zdrowie(cfg):
+    lead = f'<div class="lead-block"><p>{esc(ZDROWIE_INTRO)}</p></div>'
+
+    # Sekcja: Szczepienia
+    sez = (f'<h2 class="divider">Szczepienia</h2>'
+           f'<p class="section-intro">{esc(SZCZEPIENIA_INTRO)}</p>'
+           f'<h3 class="vax-h3">Zalecane szczepienia</h3>')
+
+    accordions, first_open = [], True
+    for v in VACCINES:
+        body = "".join(_zd_block(b) for b in v["blocks"])
+        open_attr = " open" if first_open else ""
+        first_open = False
+        accordions.append(
+            f'<details class="chapter"{open_attr}>'
+            f'<summary><span class="chapter__num chapter__num--glyph chapter__num--check">✓</span>'
+            f'<span class="chapter__title">{esc(v["title"])}</span>{CHEV}</summary>'
+            f'<div class="chapter__body">{body}</div></details>'
+        )
+
+    # Praktyczne szczegóły
+    steps = "".join(f'<li><strong>{esc(lead_)}</strong>{esc(rest)}</li>'
+                    for lead_, rest in PRAKTYCZNE)
+    praktyczne = (f'<h2 class="divider">Praktyczne szczegóły — jak planować szczepienia</h2>'
+                  f'<ol class="vax-steps">{steps}</ol>')
+
+    # Apteczka + poradnik (przyciski PDF, jeśli link podpięty)
+    def pdf_section(title, intro, link, label):
+        if link and link != "#":
+            btn = (f'<a class="btn btn--gold" href="{link}" target="_blank" '
+                   f'rel="noopener">{label} (PDF) {ARROW}</a>')
+        else:
+            btn = '<p class="pdf-todo">Plik PDF do podpięcia (link z Google Drive).</p>'
+        return (f'<h2 class="divider">{esc(title)}</h2>'
+                f'<div class="lead-block"><p>{esc(intro)}</p>{btn}</div>')
+
+    apteczka = pdf_section("Apteczka wyprawowa", APTECZKA_INTRO, APTECZKA_PDF,
+                           "Apteczka do pobrania")
+    poradnik = pdf_section("Mini-poradnik pierwszej pomocy", PORADNIK_INTRO, PORADNIK_PDF,
+                           "Poradnik do pobrania")
+
+    html = (
+        head(cfg["title"], cfg.get("desc", "Zdrowie przed wyprawą na Kilimandżaro — szczepienia, malaria, apteczka."), "page-zdrowie")
+        + nav(cfg.get("nav_current", "zdrowie"))
+        + hero(cfg["title"], cfg.get("desc", ""), cfg["hero"], crumbs_html=crumbs(cfg.get("parent")))
+        + f'<main class="content"><div class="content__col">'
+          f'{lead}{sez}{"".join(accordions)}{praktyczne}{apteczka}{poradnik}</div></main>'
+        + footer()
+    )
+    return write("kilimandzaro/zdrowie/index.html", html)
+
+
+# --------------------------------------------------------------------------- #
 def main():
     built = []
     built.append(build_home())
@@ -724,6 +934,15 @@ def main():
             built.append(build_sprzet(cfg))
         elif slug == "kilimandzaro/safari-atrakcje":
             built.append(build_safari(cfg))
+        elif slug == "kilimandzaro/zdrowie":
+            built.append(build_zdrowie(cfg))
+        elif slug in (
+            "kilimandzaro/trening/oporowy/nogi-posladki",
+            "kilimandzaro/trening/oporowy/core",
+            "kilimandzaro/trening/oporowy/plecy-barki",
+            "kilimandzaro/trening/oporowy/stabilizacja",
+        ):
+            built.append(build_training_exercise(slug, cfg))
         elif cfg["kind"] == "hub":
             built.append(build_hub(slug, cfg))
         else:
