@@ -22,6 +22,7 @@ from sprzet_data import INTRO as SPRZET_INTRO, CHECKLIST_PDF, SPRZET_SECTIONS
 from safari_data import SAFARI_INTRO, SAFARI_ATTRACTIONS
 from zdrowie_data import (ZDROWIE_INTRO, SZCZEPIENIA_INTRO, VACCINES, PRAKTYCZNE,
                           APTECZKA_INTRO, PORADNIK_INTRO, APTECZKA_PDF, PORADNIK_PDF)
+from trasy_data import ROUTES as TRASY_CONTENT
 
 ROOT = Path(__file__).resolve().parent
 SITE = ROOT / "site"
@@ -100,6 +101,9 @@ PAGES = {
     "kilimandzaro/trening/oporowy": dict(
         title="Trening oporowy", hero=f"{IMG}/luNxOWwpbFhvfKuIy3kkUVInMY.jpg", kind="hub",
         parent=("Trening", "/kilimandzaro/trening/"),
+        # Przycisk PDF (link Google Drive). Etykietę zmień tutaj, jeśli w oryginale była inna.
+        pdf=("Plan treningu oporowego do pobrania",
+             "https://drive.google.com/file/d/1W4VATzz3GqzsiDaGhqxJ2HZplA3OrYB0/view"),
         children=[
             ("Core",            "/kilimandzaro/trening/oporowy/core/",          "Brzuch i stabilny tułów.", f"{IMG}/ptt1MbUgNPHImTFg0hHE1hSa1eA.jpg"),
             ("Nogi i pośladki", "/kilimandzaro/trening/oporowy/nogi-posladki/", "Motor podejść i zejść.", f"{IMG}/WZ6tlnrd8xNMH2I5zl26dv1xRg.jpg"),
@@ -500,11 +504,20 @@ def build_hub(slug, cfg):
 
     desc = cfg.get("desc") or (lead[0][:155] if lead else cfg["title"])
     intro_html = f'<section class="section-intro">{intro}</section>' if intro else ""
+
+    pdf_html = ""
+    pdf = cfg.get("pdf")
+    if pdf and pdf[1] and pdf[1] != "#":
+        label, link = pdf
+        pdf_html = (f'<div class="lead-block" style="text-align:center">'
+                    f'<a class="btn btn--gold" href="{link}" target="_blank" '
+                    f'rel="noopener">{esc(label)} (PDF) {ARROW}</a></div>')
+
     html = (
         head(cfg["title"], desc)
         + nav(cfg.get("nav_current", ""))
         + hero(cfg["title"], cfg.get("desc", ""), cfg["hero"], crumbs_html=crumbs(cfg.get("parent")))
-        + f'<main class="wrap">{intro_html}<div class="cards">{cards}</div></main>'
+        + f'<main class="wrap">{intro_html}<div class="cards">{cards}</div>{pdf_html}</main>'
         + footer()
     )
     return write(slug + "/index.html", html)
@@ -536,6 +549,69 @@ def build_landing():
     return write("kilimandzaro/index.html", html)
 
 
+def _trasy_versions_table(content):
+    """Render the 'Różnice między wersją…' comparison table (full header row)."""
+    t = content.get("table")
+    if not t:
+        note = content.get("table_note")
+        if note:
+            return f'<p class="route-todo">{esc(note)}</p>'
+        return ""
+    cols = t["cols"]
+    head_cells = "".join(f'<th scope="col">{esc(c)}</th>' for c in cols)
+    body = ""
+    for r in t["rows"]:
+        first, rest = r[0], r[1:]
+        tds = "".join(
+            f'<td data-label="{esc(cols[i+1])}">{esc(v)}</td>' for i, v in enumerate(rest)
+        )
+        body += (f'<tr><th scope="row" data-label="{esc(cols[0])}">{esc(first)}</th>{tds}</tr>')
+    cap = f'<caption>{esc(t.get("title", ""))}</caption>' if t.get("title") else ""
+    return (f'<div class="gear-table-wrap route-table"><table class="gear-table">{cap}'
+            f'<thead><tr>{head_cells}</tr></thead><tbody>{body}</tbody></table></div>')
+
+
+def _trasy_day(day):
+    stats = "".join(
+        f'<div class="route-day__stat"><span class="route-day__k">{esc(k)}</span>'
+        f'<span class="route-day__v">{esc(v)}</span></div>'
+        for k, v in day.get("stats", [])
+    )
+    note = (f'<p class="route-day__note">{esc(day["note"])}</p>'
+            if day.get("note") else "")
+    return (
+        f'<article class="route-day">'
+        f'<h4 class="route-day__title">{esc(day["title"])}</h4>'
+        f'<div class="route-day__stats">{stats}</div>'
+        f'<p class="route-day__desc">{esc(day["desc"])}</p>'
+        f'{note}</article>'
+    )
+
+
+def _trasy_panel(name, content, active):
+    if not content:
+        return ""
+    meta = f'<p class="route-meta">{esc(content["meta"])}</p>' if content.get("meta") else ""
+    bullets = "".join(f"<li>{esc(b)}</li>" for b in content.get("good_if", []))
+    good = ""
+    if bullets:
+        gt = content.get("good_if_title", "Sprawdzi się, jeśli:")
+        good = (f'<div class="route-goodif"><h3>{esc(gt)}</h3>'
+                f'<ul class="route-goodif__list">{bullets}</ul></div>')
+    partial = (f'<p class="route-todo">{esc(content["partial_note"])}</p>'
+               if content.get("partial_note") else "")
+    days = "".join(_trasy_day(d) for d in content.get("days", []))
+    table = _trasy_versions_table(content)
+    hidden = "" if active else " hidden"
+    return (
+        f'<section class="route-panel" data-panel="{esc(name)}"{hidden}>'
+        f'<h2 class="route-panel__title">{esc(content["title"])}</h2>'
+        f'{meta}{good}{partial}'
+        f'<div class="route-days">{days}</div>'
+        f'{table}</section>'
+    )
+
+
 def build_trasy():
     routes = [
         ("Machame", "Machame Route", "H1uV71HmHwcSbf2lI3IXbTOqzo.png"),
@@ -552,9 +628,13 @@ def build_trasy():
         for i, (n, _, _) in enumerate(routes)
     )
     data = ",".join(f'["{n}","{lab}","{IMG}/{f}"]' for n, lab, f in routes)
+    panels = "".join(
+        _trasy_panel(n, TRASY_CONTENT.get(n), i == 0) for i, (n, _, _) in enumerate(routes)
+    )
     intro = ('<section class="section-intro">'
              '<p>Na Kilimandżaro prowadzi kilka tras, które różnią się długością, krajobrazem '
-             'i tempem aklimatyzacji. Wybierz trasę, by zobaczyć jej przebieg na mapie.</p></section>')
+             'i tempem aklimatyzacji. Wybierz trasę, by zobaczyć jej przebieg na mapie i pełny opis '
+             'dzień po dniu.</p></section>')
     body = f"""<main>
   {intro}
   <div class="routes">
@@ -564,20 +644,25 @@ def build_trasy():
       <figcaption class="routes__cap"><b id="routeName">Machame Route</b><span>Mapa trasy — RoadTo</span></figcaption>
     </figure>
   </div>
+  <div class="content__col route-content">
+    {panels}
+  </div>
 </main>
 <script>
   const R=[{data}];
   const img=document.getElementById('routeMap'),nm=document.getElementById('routeName');
+  const panels=document.querySelectorAll('.route-panel');
   document.querySelectorAll('.routes__tab').forEach(b=>b.addEventListener('click',()=>{{
     const r=R[+b.dataset.i];
     img.src=r[2]; img.alt='Mapa trasy '+r[0]+' na Kilimandżaro'; nm.textContent=r[1];
     document.querySelectorAll('.routes__tab').forEach(x=>x.classList.remove('is-active'));
     b.classList.add('is-active');
+    panels.forEach(p=>{{ p.hidden = (p.dataset.panel !== r[0]); }});
   }}));
 </script>
 """
     html = (
-        head("Trasy", "Mapy tras wejściowych na Kilimandżaro: Machame, Marangu, Lemosho, Rongai i inne.", "page-trasy")
+        head("Trasy", "Mapy i opisy tras wejściowych na Kilimandżaro: Machame, Marangu, Lemosho, Rongai i inne.", "page-trasy")
         + nav("trasy")
         + hero("Trasy", "Warianty wejścia na dach Afryki.", f"{IMG}/N8r3L6juAZsihso94JAF3tsgkuY.jpg",
                crumbs_html=crumbs(("Kilimandżaro", "/kilimandzaro/")))

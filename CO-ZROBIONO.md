@@ -89,3 +89,18 @@ Treść Sprzętu → `sprzet_data.py`, Safari → `safari_data.py`. Zmień → z
 - Dodano dedykowany renderer `build_logistyka` (hero + wstęp 1:1 + przycisk „Checklista do pobrania").
 - Logistyka POZOSTAJE ukryta w menu/stopce/kafelkach (0 linków w serwisie) — dostępna tylko pod URL.
 - Komplet: wszystkie 4 przyciski pobierania aktywne (Ekwipunek, Apteczka, Poradnik, Checklista).
+
+## Aktualizacja (sesja 23.06, część „Trasy")
+- Sekcja Trasy: 8 tras (Marangu, Machame, Lemosho, Rongai, Shira, Umbwe, Northern Circuit, Western Breach)
+  jako panele pod przełącznikiem map — każda: główka (Długość/Czas/Trudność/Przewyższenie),
+  lista „sprawdzi się, jeśli", dni w szarych kartach (stats + opis), tabela wersji (gdy jest).
+- NAPRAWA: trasy_data.py nie kompilował się — polskie cudzysłowy „tekst" miały zamykający znak jako
+  zwykły ASCII " (rozrywał stringi). Naprawiono 18 par (zamykające → ”). Build znów przechodzi (21 stron).
+- DO WERYFIKACJI (nie zmyślam treści): brak tabeli „różnice wersji" w danych dla Machame, Rongai, Umbwe;
+  Western Breach ma dni 3–7 (1–2 brak — prawdopodobnie celowo, bo dojście zależy od trasy: Machame/Lemosho/Umbwe).
+
+## Aktualizacja (sesja 23.06, część „PDF Treningu oporowego")
+- Podpięto 5. plik PDF: na hubie /kilimandzaro/trening/oporowy (link Google Drive).
+- build_hub obsługuje teraz opcjonalny przycisk PDF (pole `pdf=(label, link)` w PAGES).
+- Etykieta przycisku ustawiona jako „Plan treningu oporowego do pobrania" — do potwierdzenia/zmiany,
+  bo oryginalna nazwa nie zgrała się ze schowanego komponentu (edycja: pole `pdf` w PAGES["kilimandzaro/trening/oporowy"]).

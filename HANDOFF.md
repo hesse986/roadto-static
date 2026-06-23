@@ -67,6 +67,12 @@ regenerację (tak jak `build_trasy`/`build_home`).
 4. **Zdjęcia atrakcji Safari** — pliki nieobecne w repo; strony tekstowe.
 5. **Sprzęt — czapka „Sunday Afternoons"** — atut był pusty, renderuje się „—".
 
+
+6. **Trasy — do weryfikacji** (treść z `trasy_data.py`, renderer `build_trasy`/`_trasy_panel`/`_trasy_day`/`_trasy_versions_table`):
+   - Brak tabeli „Różnice między wersją" dla **Machame, Rongai, Umbwe** — sprawdzić w oryginale, czy miały; jak tak, dosłać screen.
+   - **Western Breach** ma dni 3–7 (brak 1–2; pewnie celowo — dojście zależy od trasy).
+   - Plik miał błędy składni (polskie „..." z ASCII "); naprawione (18 par → ”).
+
 Strony treningu, które NIE są ćwiczeniami (zostawione jako artykuły, render `build_leaf`):
 `trening/wydolnosciowy/strefy-tetna`, `…/czynniki-wplywajace`, `trening/regeneracja`.
 Huby (`trening`, `…/oporowy`, `…/wydolnosciowy`) działają (kafelki-linki). Te małe zdjęcia
